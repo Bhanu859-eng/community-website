@@ -1,1 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>YOUR BRAND — Community First</title>
+
+  <meta
+    name="description"
+    content="A community-first platform connecting people, businesses and opportunities."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111827;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    .nav-button {
+      background: #111827;
+      color: white;
+      padding: 11px 18px;
+      border-radius: 9px;
+      font-weight: 700;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 90px 0 70px;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, #eef2ff 0%, #ffffff 50%);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border: 1px solid #d1d5db;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #374151;
+      background: white;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: auto;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -3px;
+    }
+
+    .hero p {
+      max-width: 690px;
+      margin: 25px auto 0;
+      font-size: 19px;
+      color: #6b7280;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #111827;
+      color: white;
+    }
+
+    .btn-secondary {
+      border: 1px solid #d1d5db;
+      background: white;
+    }
+
+    .small-note {
+      margin-top: 15px;
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    /* VIDEO */
+
+    .video-section {
+      padding: 30px 0 90px;
+    }
+
+    .video-box {
+      max-width: 950px;
+      margin: auto;
+      aspect-ratio: 16 / 9;
+      background: #111827;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    }
+
+    .video-content {
+      max-width: 550px;
+    }
+
+    .play {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: white;
+      color: #111827;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 25px;
+    }
+
+    .video-box h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .video-box p {
+      color: #d1d5db;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(32px, 5vw, 50px);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+    }
+
+    .section-heading p {
+      margin-top: 15px;
+      color: #6b7280;
+      font-size: 17px;
+    }
+
+    /* CARDS */
+
+    .cards {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 30px;
+      background: white;
+    }
+
+    .card-number {
+      font-size: 13px;
+      font-weight: 800;
+      color: #6b7280;
+      margin-bottom: 30px;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    /* HOW IT WORKS */
+
+    .steps {
+      max-width: 850px;
+      margin: 50px auto 0;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 20px;
+      padding: 25px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #111827;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    .step h3 {
+      margin-bottom: 5px;
+      font-size: 20px;
+    }
+
+    .step p {
+      color: #6b7280;
+    }
+
+    /* MEMBERSHIP */
+
+    .membership {
+      background: #f9fafb;
+    }
+
+    .price-box {
+      max-width: 650px;
+      margin: 45px auto 0;
+      border: 1px solid #d1d5db;
+      background: white;
+      border-radius: 20px;
+      padding: 42px;
+      text-align: center;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.06);
+    }
+
+    .price {
+      font-size: 60px;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    .price-label {
+      color: #6b7280;
+      margin-bottom: 25px;
+    }
+
+    .benefits {
+      text-align: left;
+      max-width: 420px;
+      margin: 25px auto;
+    }
+
+    .benefits div {
+      padding: 9px 0;
+      color: #374151;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 800px;
+      margin: 45px auto 0;
+    }
+
+    details {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 17px;
+    }
+
+    details p {
+      color: #6b7280;
+      margin-top: 12px;
+      padding-right: 20px;
+    }
+
+    /* FINAL CTA */
+
+    .final-cta {
+      text-align: center;
+      background: #111827;
+      color: white;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(35px, 6vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .final-cta p {
+      color: #d1d5db;
+      max-width: 620px;
+      margin: 18px auto 30px;
+    }
+
+    .final-cta .btn-primary {
+      background: white;
+      color: #111827;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 65px 0 50px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .price-box {
+        padding: 30px 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <a href="#" class="logo">
+        YOUR BRAND
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#how">How It Works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#join" class="nav-button">Join — ₹51</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="container">
+
+      <div class="badge">
+        COMMUNITY FIRST
+      </div>
+
+      <h1>
+        We're building a community around people, opportunities & businesses.
+      </h1>
+
+      <p>
+        A community-first platform designed to bring people together,
+        create meaningful opportunities and build something bigger — together.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#join" class="btn btn-primary">
+          JOIN THE COMMUNITY — ₹51
+        </a>
+
+        <a href="#video" class="btn btn-secondary">
+          WATCH HOW IT WORKS
+        </a>
+
+      </div>
+
+      <div class="small-note">
+        Learn exactly what you're joining before you decide.
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- VIDEO -->
+
+  <section class="video-section" id="video">
+
+    <div class="container">
+
+      <div class="video-box">
+
+        <div class="video-content">
+
+          <div class="play">
+            ▶
+          </div>
+
+          <h2>
+            See What We're Building
+          </h2>
+
+          <p>
+            Your business explainer video will be placed here.
+            It will explain the community, the vision, the business model
+            and exactly what members can expect.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>
+          Community comes first.
+        </h2>
+
+        <p>
+          We're creating a network where members and businesses
+          can grow together.
+        </p>
+
+      </div>
+
+
+      <div class="cards">
+
+        <div class="card">
+
+          <div class="card-number">01</div>
+
+          <h3>People</h3>
+
+          <p>
+            Build a strong community of real people who want
+            to participate, discover and contribute.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-number">02</div>
+
+          <h3>Opportunities</h3>
+
+          <p>
+            As the community grows, businesses can connect
+            with an engaged audience through legitimate campaigns.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-number">03</div>
+
+          <h3>Future</h3>
+
+          <p>
+            Over time, the platform can expand into products,
+            services, partnerships and new community experiences.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+
+  <section id="how">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>
+          How it works
+        </h2>
+
+        <p>
+          Simple for members. Built to scale behind the scenes.
+        </p>
+
+      </div>
+
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div class="step-number">1</div>
+
+          <div>
+            <h3>Join</h3>
+
+            <p>
+              Choose to become a member of the community.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">2</div>
+
+          <div>
+            <h3>Get Verified</h3>
+
+            <p>
+              Complete the membership process and receive
+              your member identification.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">3</div>
+
+          <div>
+            <h3>Enter the Community</h3>
+
+            <p>
+              After successful payment, you'll receive access
+              to the official community.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">4</div>
+
+          <div>
+            <h3>Discover Opportunities</h3>
+
+            <p>
+              As the community grows, eligible members may
+              participate in future campaigns and opportunities.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MEMBERSHIP -->
+
+  <section class="membership" id="join">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>
+          Become a founding member.
+        </h2>
+
+        <p>
+          Start your journey with the community for a
+          one-time membership verification fee.
+        </p>
+
+      </div>
+
+
+      <div class="price-box">
+
+        <div class="price">
+          ₹51
+        </div>
+
+        <div class="price-label">
+          One-time membership verification
+        </div>
+
+
+        <div class="benefits">
+
+          <div>✓ Community access after successful payment</div>
+
+          <div>✓ Member identification</div>
+
+          <div>✓ Access to community updates</div>
+
+          <div>✓ Opportunity to participate in eligible future campaigns</div>
+
+        </div>
+
+
+        <!-- PAYMENT BUTTON -->
+
+        <a
+          href="#"
+          class="btn btn-primary"
+          style="width:100%;"
+          onclick="alert('Secure UPI payment checkout will be connected here.'); return false;"
+        >
+          JOIN NOW — ₹51
+        </a>
+
+
+        <div class="small-note">
+          Payment checkout will be securely processed through
+          our designated payment provider.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section id="faq">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>
+          Frequently asked questions
+        </h2>
+
+      </div>
+
+
+      <div class="faq">
+
+        <details>
+
+          <summary>
+            What is this community?
+          </summary>
+
+          <p>
+            It is a community-first platform designed to connect
+            people, businesses and future opportunities.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Why is there a ₹51 verification fee?
+          </summary>
+
+          <p>
+            The ₹51 fee is for membership verification and access
+            to the community. The exact terms and benefits are
+            presented before payment.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Will I definitely earn money?
+          </summary>
+
+          <p>
+            No. Participation in future campaigns or opportunities
+            is not a guaranteed source of income. Eligibility and
+            campaign terms will always be communicated separately.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            What happens after payment?
+          </summary>
+
+          <p>
+            After successful payment verification, you'll receive
+            instructions for joining the official community.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            How will businesses work with the community?
+          </summary>
+
+          <p>
+            As the community grows, businesses may work with the
+            platform on legitimate marketing campaigns and other
+            community-focused opportunities.
+          </p>
+
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL CTA -->
+
+  <section class="final-cta">
+
+    <div class="container">
+
+      <h2>
+        Build the community with us.
+      </h2>
+
+      <p>
+        Join the beginning of something designed to grow
+        with its members.
+      </p>
+
+      <a href="#join" class="btn btn-primary">
+        JOIN FOR ₹51
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        © 2026 YOUR BRAND. All rights reserved.
+      </div>
+
+      <div>
+        Community First
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
