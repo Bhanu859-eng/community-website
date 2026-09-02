@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Payment — Indian Business Bureau</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .payment-box {
+      width: 100%;
+      max-width: 500px;
+      background: white;
+      padding: 35px 25px;
+      border-radius: 18px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .membership {
+      background: #f7f7f7;
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 25px;
+      text-align: left;
+    }
+
+    .membership h2 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .membership p {
+      margin: 8px 0;
+      color: #555;
+    }
+
+    .price {
+      text-align: center;
+      font-size: 38px;
+      font-weight: bold;
+      margin: 25px 0;
+      color: #111;
+    }
+
+    .pay-btn {
+      width: 100%;
+      border: none;
+      background: #111;
+      color: white;
+      padding: 16px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .pay-btn:hover {
+      opacity: 0.9;
+    }
+
+    .back-btn {
+      display: block;
+      margin-top: 18px;
+      color: #555;
+      text-decoration: none;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #777;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="payment-box">
+
+    <div class="logo">
+      INDIAN BUSINESS BUREAU
+    </div>
+
+    <div class="subtitle">
+      Membership Registration
+    </div>
+
+    <div class="membership">
+
+      <h2>IBB Membership</h2>
+
+      <p>
+        <strong>Registration Fee:</strong> ₹101
+      </p>
+
+      <p>
+        <strong>Membership:</strong> Indian Business Bureau
+      </p>
+
+      <p>
+        Your registration is ready for payment.
+      </p>
+
+    </div>
+
+    <div class="price">
+      ₹101
+    </div>
+
+    <button class="pay-btn" onclick="startPayment()">
+      PAY ₹101
+    </button>
+
+    <a href="join.html" class="back-btn">
+      ← Back to Registration
+    </a>
+
+    <div class="note">
+      Secure payment gateway will be used for processing.
+      Your membership will be activated only after successful payment verification.
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function startPayment() {
+
+      /*
+        IMPORTANT:
+
+        Yahan real payment gateway connect karna hoga.
+
+        GitHub Pages par sirf HTML/JavaScript se
+        secure payment verification nahi ki ja sakti.
+
+        Is button ko abhi test/placeholder rakha gaya hai.
+      */
+
+      alert(
+        "Payment gateway abhi connected nahi hai. " +
+        "₹101 payment ko mark as successful nahi kiya gaya hai."
+      );
+
+    }
+
+  </script>
+
+</body>
+</html>
