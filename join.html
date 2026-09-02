@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,48 +12,138 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     body {
-      background: #f5f7fb;
       min-height: 100vh;
-      padding: 30px 15px;
+      background:
+        radial-gradient(circle at top left, #dbeafe 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #e0e7ff 0%, transparent 35%),
+        linear-gradient(135deg, #f8fafc, #eef2ff);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px 15px;
+      color: #111827;
     }
 
-    .container {
-      max-width: 600px;
-      margin: auto;
+    .page {
+      width: 100%;
+      max-width: 560px;
     }
 
-    .top {
+    /* Header */
+
+    .brand {
       text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .brand-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 12px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 20px;
+
+      background: linear-gradient(135deg, #111827, #374151);
+      color: white;
+
+      font-size: 24px;
+      font-weight: 800;
+
+      box-shadow: 0 12px 30px rgba(17, 24, 39, 0.20);
+    }
+
+    .brand h1 {
+      font-size: 25px;
+      letter-spacing: 1px;
+      font-weight: 800;
+    }
+
+    .brand p {
+      margin-top: 6px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    /* Main Card */
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(15px);
+
+      border: 1px solid rgba(255, 255, 255, 0.8);
+
+      border-radius: 26px;
+
+      padding: 30px;
+
+      box-shadow:
+        0 25px 60px rgba(15, 23, 42, 0.12),
+        0 5px 20px rgba(15, 23, 42, 0.05);
+    }
+
+    .card-header {
       margin-bottom: 25px;
     }
 
-    .top h1 {
-      font-size: 28px;
-      color: #111;
-      margin-bottom: 8px;
+    .card-header h2 {
+      font-size: 24px;
+      margin-bottom: 7px;
     }
 
-    .top p {
-      color: #666;
-      font-size: 15px;
+    .card-header p {
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
-    .form-box {
-      background: #fff;
-      padding: 30px 25px;
-      border-radius: 18px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.10);
+    /* Membership Fee */
+
+    .fee-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 17px 18px;
+      margin-bottom: 25px;
+
+      border-radius: 17px;
+
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: white;
+
+      box-shadow: 0 12px 25px rgba(17, 24, 39, 0.16);
     }
 
-    .form-box h2 {
-      font-size: 22px;
-      margin-bottom: 22px;
-      color: #111;
+    .fee-card small {
+      display: block;
+      color: #cbd5e1;
+      font-size: 12px;
+      margin-bottom: 4px;
     }
+
+    .fee-card strong {
+      font-size: 25px;
+    }
+
+    .fee-badge {
+      padding: 8px 12px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.15);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* Fields */
 
     .field {
       margin-bottom: 18px;
@@ -60,82 +151,191 @@
 
     .field label {
       display: block;
-      margin-bottom: 7px;
-      font-size: 14px;
-      font-weight: bold;
-      color: #333;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #374151;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      font-size: 16px;
+      color: #9ca3af;
+
+      pointer-events: none;
     }
 
     .field input,
     .field select {
       width: 100%;
-      padding: 14px;
-      border: 1px solid #d5d5d5;
-      border-radius: 9px;
-      font-size: 15px;
+      height: 52px;
+
+      border: 1px solid #e5e7eb;
+      border-radius: 13px;
+
+      background: #f9fafb;
+
+      padding: 0 15px 0 43px;
+
+      font-size: 14px;
+      color: #111827;
+
       outline: none;
-      background: #fff;
+
+      transition: all 0.2s ease;
+    }
+
+    .field select {
+      cursor: pointer;
+    }
+
+    .field input::placeholder {
+      color: #9ca3af;
     }
 
     .field input:focus,
     .field select:focus {
-      border-color: #111;
+      background: #fff;
+      border-color: #6366f1;
+
+      box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.10);
     }
+
+    /* Button */
 
     .submit-btn {
       width: 100%;
-      padding: 16px;
+      height: 56px;
+
       border: none;
-      border-radius: 10px;
-      background: #111;
-      color: #fff;
-      font-size: 17px;
-      font-weight: bold;
+      border-radius: 14px;
+
+      background: linear-gradient(135deg, #111827, #374151);
+
+      color: white;
+
+      font-size: 16px;
+      font-weight: 800;
+
       cursor: pointer;
+
       margin-top: 8px;
+
+      box-shadow: 0 12px 25px rgba(17, 24, 39, 0.20);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .submit-btn:hover {
-      opacity: 0.88;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(17, 24, 39, 0.25);
     }
 
-    .fee {
-      text-align: center;
-      margin: 20px 0;
-      padding: 15px;
-      background: #f5f5f5;
-      border-radius: 10px;
-      color: #333;
+    .submit-btn:active {
+      transform: translateY(0);
     }
 
-    .fee strong {
-      font-size: 22px;
+    /* Secure note */
+
+    .secure {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 7px;
+
+      margin-top: 15px;
+
+      color: #6b7280;
+      font-size: 12px;
     }
+
+    .secure span {
+      color: #16a34a;
+      font-weight: bold;
+    }
+
+    /* Back */
 
     .back {
       display: block;
+
       text-align: center;
-      margin-top: 20px;
-      color: #555;
+
+      margin-top: 19px;
+
+      color: #6b7280;
+
       text-decoration: none;
-      font-size: 14px;
+
+      font-size: 13px;
+      font-weight: 600;
     }
 
-    .small-note {
+    .back:hover {
+      color: #111827;
+    }
+
+    .footer-note {
       text-align: center;
+
       margin-top: 18px;
-      font-size: 12px;
-      color: #777;
+
+      color: #9ca3af;
+
+      font-size: 11px;
       line-height: 1.5;
     }
 
+    /* Mobile */
+
     @media (max-width: 480px) {
-      .form-box {
-        padding: 25px 18px;
+
+      body {
+        padding: 18px 12px;
       }
 
-      .top h1 {
-        font-size: 24px;
+      .brand {
+        margin-bottom: 15px;
+      }
+
+      .brand-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 17px;
+        font-size: 21px;
+      }
+
+      .brand h1 {
+        font-size: 21px;
+      }
+
+      .card {
+        padding: 22px 18px;
+        border-radius: 22px;
+      }
+
+      .card-header h2 {
+        font-size: 21px;
+      }
+
+      .fee-card {
+        padding: 15px;
+      }
+
+      .fee-card strong {
+        font-size: 23px;
       }
     }
   </style>
@@ -143,110 +343,237 @@
 
 <body>
 
-  <div class="container">
+  <div class="page">
 
-    <div class="top">
+    <!-- BRAND -->
+
+    <div class="brand">
+
+      <div class="brand-icon">
+        IBB
+      </div>
+
       <h1>INDIAN BUSINESS BUREAU</h1>
-      <p>Membership Registration</p>
+
+      <p>Professional Membership Registration</p>
+
     </div>
 
-    <div class="form-box">
 
-      <h2>Register for IBB Membership</h2>
+    <!-- FORM CARD -->
 
-      <form id="registrationForm">
+    <div class="card">
 
-        <div class="field">
-          <label for="name">Full Name *</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your full name"
-            required
-          >
-        </div>
+      <div class="card-header">
 
-        <div class="field">
-          <label for="mobile">Mobile Number *</label>
-          <input
-            type="tel"
-            id="mobile"
-            name="mobile"
-            placeholder="Enter mobile number"
-            pattern="[0-9]{10}"
-            maxlength="10"
-            required
-          >
-        </div>
+        <h2>Join IBB Membership</h2>
 
-        <div class="field">
-          <label for="email">Email Address *</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-            required
-          >
-        </div>
+        <p>
+          Enter your details below to continue with
+          your membership registration.
+        </p>
 
-        <div class="field">
-          <label for="city">City *</label>
-          <input
-            type="text"
-            id="city"
-            name="city"
-            placeholder="Enter your city"
-            required
-          >
-        </div>
+      </div>
 
-        <div class="field">
-          <label for="state">State *</label>
-          <select id="state" name="state" required>
-            <option value="">Select State</option>
-            <option>Punjab</option>
-            <option>Haryana</option>
-            <option>Delhi</option>
-            <option>Himachal Pradesh</option>
-            <option>Rajasthan</option>
-            <option>Uttar Pradesh</option>
-            <option>Maharashtra</option>
-            <option>Gujarat</option>
-            <option>Madhya Pradesh</option>
-            <option>West Bengal</option>
-            <option>Bihar</option>
-            <option>Jharkhand</option>
-            <option>Odisha</option>
-            <option>Chhattisgarh</option>
-            <option>Uttarakhand</option>
-            <option>Jammu & Kashmir</option>
-            <option>Other</option>
-          </select>
-        </div>
 
-        <div class="fee">
-          Membership Registration Fee:
-          <br>
+      <!-- FEE -->
+
+      <div class="fee-card">
+
+        <div>
+          <small>Registration Fee</small>
           <strong>₹101</strong>
         </div>
 
-        <button type="submit" class="submit-btn">
-          CONTINUE TO ₹101 PAYMENT
+        <div class="fee-badge">
+          ONE TIME
+        </div>
+
+      </div>
+
+
+      <!-- FORM -->
+
+      <form id="registrationForm">
+
+        <!-- NAME -->
+
+        <div class="field">
+
+          <label for="name">
+            Full Name *
+          </label>
+
+          <div class="input-wrap">
+
+            <span class="input-icon">👤</span>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- MOBILE -->
+
+        <div class="field">
+
+          <label for="mobile">
+            Mobile Number *
+          </label>
+
+          <div class="input-wrap">
+
+            <span class="input-icon">📱</span>
+
+            <input
+              type="tel"
+              id="mobile"
+              name="mobile"
+              placeholder="10-digit mobile number"
+              pattern="[0-9]{10}"
+              maxlength="10"
+              inputmode="numeric"
+              autocomplete="tel"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="field">
+
+          <label for="email">
+            Email Address *
+          </label>
+
+          <div class="input-wrap">
+
+            <span class="input-icon">✉️</span>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- CITY -->
+
+        <div class="field">
+
+          <label for="city">
+            City *
+          </label>
+
+          <div class="input-wrap">
+
+            <span class="input-icon">📍</span>
+
+            <input
+              type="text"
+              id="city"
+              name="city"
+              placeholder="Enter your city"
+              autocomplete="address-level2"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- STATE -->
+
+        <div class="field">
+
+          <label for="state">
+            State *
+          </label>
+
+          <div class="input-wrap">
+
+            <span class="input-icon">🇮🇳</span>
+
+            <select id="state" name="state" required>
+
+              <option value="">
+                Select your state
+              </option>
+
+              <option>Punjab</option>
+              <option>Haryana</option>
+              <option>Delhi</option>
+              <option>Himachal Pradesh</option>
+              <option>Rajasthan</option>
+              <option>Uttar Pradesh</option>
+              <option>Maharashtra</option>
+              <option>Gujarat</option>
+              <option>Madhya Pradesh</option>
+              <option>West Bengal</option>
+              <option>Bihar</option>
+              <option>Jharkhand</option>
+              <option>Odisha</option>
+              <option>Chhattisgarh</option>
+              <option>Uttarakhand</option>
+              <option>Jammu & Kashmir</option>
+              <option>Other</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <button
+          type="submit"
+          class="submit-btn"
+        >
+          CONTINUE TO ₹101 PAYMENT →
         </button>
 
       </form>
+
+
+      <div class="secure">
+        <span>✓</span>
+        Your information is submitted securely
+      </div>
+
 
       <a href="index.html" class="back">
         ← Back to Home
       </a>
 
-      <div class="small-note">
-        After submitting your registration details, you will be
-        redirected to the ₹101 UPI payment page.
-      </div>
+    </div>
 
+
+    <div class="footer-note">
+      By continuing, you agree to proceed with the
+      IBB membership registration and ₹101 registration fee.
     </div>
 
   </div>
@@ -260,33 +587,72 @@
 
         event.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const mobile = document.getElementById("mobile").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const business = document.getElementById("business").value.trim();
-        const city = document.getElementById("city").value.trim();
-        const state = document.getElementById("state").value;
+        const name =
+          document.getElementById("name").value.trim();
 
-        // Basic validation
+        const mobile =
+          document.getElementById("mobile").value.trim();
+
+        const email =
+          document.getElementById("email").value.trim();
+
+        const city =
+          document.getElementById("city").value.trim();
+
+        const state =
+          document.getElementById("state").value;
+
+
+        // Required field validation
+
         if (!name || !mobile || !email || !city || !state) {
+
           alert("Please fill all required fields.");
+
           return;
         }
+
+
+        // Mobile validation
 
         if (!/^[0-9]{10}$/.test(mobile)) {
+
           alert("Please enter a valid 10-digit mobile number.");
+
           return;
         }
 
-        // Save registration details temporarily
-        sessionStorage.setItem("ibb_name", name);
-        sessionStorage.setItem("ibb_mobile", mobile);
-        sessionStorage.setItem("ibb_email", email);
-        sessionStorage.setItem("ibb_business", business);
-        sessionStorage.setItem("ibb_city", city);
-        sessionStorage.setItem("ibb_state", state);
 
-        // DIRECTLY OPEN PAYMENT PAGE
+        // Save registration details
+
+        sessionStorage.setItem(
+          "ibb_name",
+          name
+        );
+
+        sessionStorage.setItem(
+          "ibb_mobile",
+          mobile
+        );
+
+        sessionStorage.setItem(
+          "ibb_email",
+          email
+        );
+
+        sessionStorage.setItem(
+          "ibb_city",
+          city
+        );
+
+        sessionStorage.setItem(
+          "ibb_state",
+          state
+        );
+
+
+        // Direct payment page
+
         window.location.href = "payment.html";
 
       });
@@ -295,3 +661,4 @@
 
 </body>
 </html>
+```
