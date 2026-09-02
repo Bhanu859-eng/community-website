@@ -73,21 +73,49 @@
       margin: 25px 0;
     }
 
-    .pay-btn {
+    .payment-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .upi-buttons {
+      display: grid;
+      gap: 10px;
+    }
+
+    .upi-btn {
       width: 100%;
       border: none;
-      background: #111;
-      color: #fff;
-      padding: 17px;
+      padding: 15px;
       border-radius: 11px;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: bold;
       cursor: pointer;
       transition: 0.2s;
+      color: #fff;
     }
 
-    .pay-btn:hover {
+    .upi-btn:hover {
       opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .gpay {
+      background: #111;
+    }
+
+    .phonepe {
+      background: #5f259f;
+    }
+
+    .paytm {
+      background: #00a9e0;
+    }
+
+    .other-upi {
+      background: #444;
     }
 
     .upi-info {
@@ -102,8 +130,23 @@
     .upi-id {
       font-weight: bold;
       color: #111;
-      margin-top: 5px;
+      margin-top: 7px;
       word-break: break-all;
+    }
+
+    .copy-btn {
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #333;
+      padding: 8px 14px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .copy-btn:hover {
+      background: #f5f5f5;
     }
 
     .back-btn {
@@ -186,20 +229,44 @@
       ₹101
     </div>
 
-    <button class="pay-btn" onclick="payUPI()">
-      PAY ₹101 WITH UPI
-    </button>
+    <div class="payment-title">
+      Select Your UPI App
+    </div>
+
+    <div class="upi-buttons">
+
+      <button class="upi-btn gpay" onclick="payUPI('gpay')">
+        Pay with Google Pay
+      </button>
+
+      <button class="upi-btn phonepe" onclick="payUPI('phonepe')">
+        Pay with PhonePe
+      </button>
+
+      <button class="upi-btn paytm" onclick="payUPI('paytm')">
+        Pay with Paytm
+      </button>
+
+      <button class="upi-btn other-upi" onclick="payUPI('upi')">
+        Pay with Other UPI App
+      </button>
+
+    </div>
 
     <div class="upi-info">
       Pay to UPI ID:
-      <div class="upi-id">
+      <div class="upi-id" id="upiId">
         7528826377@slc
       </div>
+
+      <button class="copy-btn" onclick="copyUPI()">
+        Copy UPI ID
+      </button>
     </div>
 
     <div class="success-message" id="successMessage">
-      UPI payment complete karne ke baad registration confirmation
-      ke liye website par wapas aayein.
+      UPI payment screen has been opened. After completing the payment,
+      return to this website for registration confirmation.
     </div>
 
     <a href="join.html" class="back-btn">
@@ -207,9 +274,9 @@
     </a>
 
     <div class="note">
-      UPI payment will open your available UPI app.
-      Payment confirmation is not automatically verified by this
-      GitHub Pages website.
+      Payment will open a compatible UPI app installed on the customer's
+      device. Payment confirmation is not automatically verified by
+      this GitHub Pages website.
     </div>
 
   </div>
@@ -217,23 +284,68 @@
 
   <script>
 
-    function payUPI() {
+    const upiId = "7528826377@slc";
+    const name = "Indian Business Bureau";
+    const amount = "101";
 
-      const upiId = "7528826377@slc";
-      const name = "Indian Business Bureau";
-      const amount = "101";
+    function createUPILink() {
 
-      const upiUrl =
-        "upi://pay" +
+      return "upi://pay" +
         "?pa=" + encodeURIComponent(upiId) +
         "&pn=" + encodeURIComponent(name) +
-        "&am=" + amount +
+        "&am=" + encodeURIComponent(amount) +
         "&cu=INR";
+    }
+
+    function payUPI(app) {
+
+      const upiUrl = createUPILink();
 
       document.getElementById("successMessage").style.display = "block";
 
-      // Open UPI payment
-      window.location.href = upiUrl;
+      /*
+       * UPI intent links are handled by the customer's device.
+       * The operating system may show available UPI apps.
+       */
+
+      if (app === "gpay") {
+
+        window.location.href = upiUrl;
+
+      } else if (app === "phonepe") {
+
+        window.location.href = upiUrl;
+
+      } else if (app === "paytm") {
+
+        window.location.href = upiUrl;
+
+      } else {
+
+        window.location.href = upiUrl;
+
+      }
+    }
+
+    function copyUPI() {
+
+      navigator.clipboard.writeText(upiId)
+        .then(function() {
+
+          const button = document.querySelector(".copy-btn");
+
+          button.innerText = "Copied!";
+
+          setTimeout(function() {
+            button.innerText = "Copy UPI ID";
+          }, 2000);
+
+        })
+        .catch(function() {
+
+          alert("UPI ID: " + upiId);
+
+        });
     }
 
   </script>
