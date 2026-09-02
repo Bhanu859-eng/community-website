@@ -235,19 +235,19 @@
 
     <div class="upi-buttons">
 
-      <button class="upi-btn gpay" onclick="payUPI('gpay')">
+      <button class="upi-btn gpay" onclick="payUPI()">
         Pay with Google Pay
       </button>
 
-      <button class="upi-btn phonepe" onclick="payUPI('phonepe')">
+      <button class="upi-btn phonepe" onclick="payUPI()">
         Pay with PhonePe
       </button>
 
-      <button class="upi-btn paytm" onclick="payUPI('paytm')">
+      <button class="upi-btn paytm" onclick="payUPI()">
         Pay with Paytm
       </button>
 
-      <button class="upi-btn other-upi" onclick="payUPI('upi')">
+      <button class="upi-btn other-upi" onclick="payUPI()">
         Pay with Other UPI App
       </button>
 
@@ -255,6 +255,7 @@
 
     <div class="upi-info">
       Pay to UPI ID:
+
       <div class="upi-id" id="upiId">
         7528826377@slc
       </div>
@@ -274,9 +275,8 @@
     </a>
 
     <div class="note">
-      Payment will open a compatible UPI app installed on the customer's
-      device. Payment confirmation is not automatically verified by
-      this GitHub Pages website.
+      Payment will open a compatible UPI app installed on your device.
+      Payment confirmation is not automatically verified by this website.
     </div>
 
   </div>
@@ -284,68 +284,57 @@
 
   <script>
 
-    const upiId = "7528826377@slc";
-    const name = "Indian Business Bureau";
-    const amount = "101";
+    const UPI_ID = "7528826377@slc";
+    const BUSINESS_NAME = "Indian Business Bureau";
+    const AMOUNT = "101.00";
 
-    function createUPILink() {
+    function payUPI() {
 
-      return "upi://pay" +
-        "?pa=" + encodeURIComponent(upiId) +
-        "&pn=" + encodeURIComponent(name) +
-        "&am=" + encodeURIComponent(amount) +
+      const upiLink =
+        "upi://pay" +
+        "?pa=" + encodeURIComponent(UPI_ID) +
+        "&pn=" + encodeURIComponent(BUSINESS_NAME) +
+        "&am=" + encodeURIComponent(AMOUNT) +
         "&cu=INR";
-    }
-
-    function payUPI(app) {
-
-      const upiUrl = createUPILink();
 
       document.getElementById("successMessage").style.display = "block";
 
-      /*
-       * UPI intent links are handled by the customer's device.
-       * The operating system may show available UPI apps.
-       */
+      window.location.href = upiLink;
+    }
 
-      if (app === "gpay") {
 
-        window.location.href = upiUrl;
+    function copyUPI() {
 
-      } else if (app === "phonepe") {
+      const button = document.querySelector(".copy-btn");
 
-        window.location.href = upiUrl;
+      if (navigator.clipboard && window.isSecureContext) {
 
-      } else if (app === "paytm") {
+        navigator.clipboard.writeText(UPI_ID)
+          .then(function () {
 
-        window.location.href = upiUrl;
+            button.innerText = "Copied!";
+
+            setTimeout(function () {
+              button.innerText = "Copy UPI ID";
+            }, 2000);
+
+          })
+          .catch(function () {
+            showUPI();
+          });
 
       } else {
 
-        window.location.href = upiUrl;
+        showUPI();
 
       }
     }
 
-    function copyUPI() {
 
-      navigator.clipboard.writeText(upiId)
-        .then(function() {
+    function showUPI() {
 
-          const button = document.querySelector(".copy-btn");
+      alert("UPI ID: " + UPI_ID);
 
-          button.innerText = "Copied!";
-
-          setTimeout(function() {
-            button.innerText = "Copy UPI ID";
-          }, 2000);
-
-        })
-        .catch(function() {
-
-          alert("UPI ID: " + upiId);
-
-        });
     }
 
   </script>
