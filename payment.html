@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -247,6 +248,80 @@
       text-align: center;
     }
 
+    /* UTR SECTION */
+
+    .verification-box {
+      margin-top: 22px;
+      padding: 20px;
+      border-radius: 16px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+    }
+
+    .verification-box h3 {
+      font-size: 17px;
+      color: #111827;
+      margin-bottom: 7px;
+    }
+
+    .verification-box p {
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .utr-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      color: #374151;
+      margin-bottom: 8px;
+    }
+
+    .utr-input {
+      width: 100%;
+      height: 52px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: white;
+      padding: 0 14px;
+      font-size: 14px;
+      color: #111827;
+      outline: none;
+      text-transform: uppercase;
+    }
+
+    .utr-input:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 4px rgba(99,102,241,.10);
+    }
+
+    .verify-button {
+      width: 100%;
+      min-height: 52px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 12px;
+      background: #13795b;
+      color: white;
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .verify-button:hover {
+      opacity: .93;
+    }
+
+    .verify-note {
+      margin-top: 10px;
+      color: #9ca3af;
+      font-size: 11px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
     .back {
       display: block;
       text-align: center;
@@ -292,186 +367,240 @@
       }
     }
   </style>
+
 </head>
 
 <body>
 
   <div class="page">
 
-    <!-- BRAND -->
+```
+<!-- BRAND -->
 
-    <div class="brand">
+<div class="brand">
 
-      <div class="brand-icon">
-        IBB
+  <div class="brand-icon">
+    IBB
+  </div>
+
+  <h1>
+    INDIAN BUSINESS BUREAU
+  </h1>
+
+  <p>
+    Professional Membership Registration
+  </p>
+
+</div>
+
+
+<!-- PAYMENT CARD -->
+
+<div class="card">
+
+  <div class="header">
+
+    <h2>
+      Complete Your Membership
+    </h2>
+
+    <p>
+      Complete the one-time ₹101 registration payment
+      using any UPI app.
+    </p>
+
+  </div>
+
+
+  <!-- AMOUNT -->
+
+  <div class="amount-card">
+
+    <div>
+
+      <small>
+        Membership Registration Fee
+      </small>
+
+      <div class="amount">
+        ₹101
       </div>
-
-      <h1>
-        INDIAN BUSINESS BUREAU
-      </h1>
-
-      <p>
-        Professional Membership Registration
-      </p>
 
     </div>
 
+    <div class="one-time">
+      ONE TIME
+    </div>
 
-    <!-- PAYMENT CARD -->
-
-    <div class="card">
-
-      <div class="header">
-
-        <h2>
-          Complete Your Membership
-        </h2>
-
-        <p>
-          Complete the one-time ₹101 registration payment
-          using any UPI app.
-        </p>
-
-      </div>
+  </div>
 
 
-      <!-- AMOUNT -->
+  <!-- MAIN PAYMENT BUTTON -->
 
-      <div class="amount-card">
+  <div class="section-title">
+    Pay securely using UPI
+  </div>
 
-        <div>
-
-          <small>
-            Membership Registration Fee
-          </small>
-
-          <div class="amount">
-            ₹101
-          </div>
-
-        </div>
-
-        <div class="one-time">
-          ONE TIME
-        </div>
-
-      </div>
+  <button
+    type="button"
+    class="pay-button"
+    onclick="payUPI()"
+  >
+    PAY ₹101 WITH UPI →
+  </button>
 
 
-      <!-- MAIN PAYMENT BUTTON -->
+  <!-- UPI APP INFORMATION -->
 
-      <div class="section-title">
-        Pay securely using UPI
+  <div class="upi-apps">
+
+    <div class="app">
+      <span class="app-icon">G</span>
+      Google Pay
+    </div>
+
+    <div class="app">
+      <span class="app-icon">P</span>
+      PhonePe
+    </div>
+
+    <div class="app">
+      <span class="app-icon">₹</span>
+      Paytm / UPI
+    </div>
+
+  </div>
+
+
+  <!-- UPI ID -->
+
+  <div class="upi-box">
+
+    <div class="upi-label">
+      Or pay directly to this UPI ID
+    </div>
+
+    <div class="upi-row">
+
+      <div
+        class="upi-id"
+        id="upiId"
+      >
+        7528826377@slc
       </div>
 
       <button
         type="button"
-        class="pay-button"
-        onclick="payUPI()"
+        class="copy-btn"
+        onclick="copyUPI()"
       >
-        PAY ₹101 WITH UPI →
+        COPY
       </button>
-
-
-      <!-- UPI APP INFORMATION -->
-
-      <div class="upi-apps">
-
-        <div class="app">
-          <span class="app-icon">G</span>
-          Google Pay
-        </div>
-
-        <div class="app">
-          <span class="app-icon">P</span>
-          PhonePe
-        </div>
-
-        <div class="app">
-          <span class="app-icon">₹</span>
-          Paytm / UPI
-        </div>
-
-      </div>
-
-
-      <!-- UPI ID -->
-
-      <div class="upi-box">
-
-        <div class="upi-label">
-          Or pay directly to this UPI ID
-        </div>
-
-        <div class="upi-row">
-
-          <div
-            class="upi-id"
-            id="upiId"
-          >
-            7528826377@slc
-          </div>
-
-          <button
-            type="button"
-            class="copy-btn"
-            onclick="copyUPI()"
-          >
-            COPY
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <!-- INSTRUCTIONS -->
-
-      <div class="instructions">
-
-        <strong>How it works:</strong><br>
-
-        1. Tap <strong>PAY ₹101 WITH UPI</strong>.<br>
-        2. Your phone will open a compatible UPI app.<br>
-        3. Check that the amount is <strong>₹101</strong>.<br>
-        4. Confirm the payment in your UPI app.<br>
-        5. Return to this website after payment.
-
-      </div>
-
-
-      <!-- STATUS -->
-
-      <div
-        class="status"
-        id="status"
-      >
-        UPI payment app is being opened.
-        Please complete your ₹101 payment and return here.
-      </div>
-
-
-      <a
-        href="join.html"
-        class="back"
-      >
-        ← Back to Registration
-      </a>
-
-    </div>
-
-
-    <div class="footer">
-
-      Indian Business Bureau • Membership Registration<br>
-
-      Please verify the recipient name and amount
-      before confirming your UPI payment.
 
     </div>
 
   </div>
 
+
+  <!-- INSTRUCTIONS -->
+
+  <div class="instructions">
+
+    <strong>How it works:</strong><br>
+
+    1. Tap <strong>PAY ₹101 WITH UPI</strong>.<br>
+    2. Your phone will open a compatible UPI app.<br>
+    3. Check that the amount is <strong>₹101</strong>.<br>
+    4. Confirm the payment in your UPI app.<br>
+    5. Return to this website.<br>
+    6. Enter your UTR / Transaction ID below.<br>
+    7. Submit the payment for verification.
+
+  </div>
+
+
+  <!-- PAYMENT STATUS -->
+
+  <div
+    class="status"
+    id="status"
+  >
+    UPI payment app is being opened.
+    Please complete your ₹101 payment and return here.
+  </div>
+
+
+  <!-- UTR VERIFICATION -->
+
+  <div class="verification-box">
+
+    <h3>
+      Payment Verification
+    </h3>
+
+    <p>
+      After completing the ₹101 payment, enter the
+      UTR / Transaction ID shown in your UPI app.
+      Your membership will remain pending until the
+      payment is verified.
+    </p>
+
+    <form id="verificationForm">
+
+      <label
+        class="utr-label"
+        for="utr"
+      >
+        UTR / Transaction ID *
+      </label>
+
+      <input
+        type="text"
+        id="utr"
+        class="utr-input"
+        placeholder="Enter UTR / Transaction ID"
+        maxlength="50"
+        autocomplete="off"
+        required
+      >
+
+      <button
+        type="submit"
+        class="verify-button"
+      >
+        SUBMIT FOR VERIFICATION →
+      </button>
+
+    </form>
+
+    <div class="verify-note">
+      Do not enter your UPI PIN, password or OTP here.
+    </div>
+
+  </div>
+
+
+  <a
+    href="join.html"
+    class="back"
+  >
+    ← Back to Registration
+  </a>
+
+</div>
+
+
+<div class="footer">
+
+  Indian Business Bureau • Membership Registration<br>
+
+  Please verify the recipient name and amount
+  before confirming your UPI payment.
+
+</div>
+```
+
+  </div>
 
   <script>
 
@@ -479,7 +608,6 @@
       =====================================================
       IBB PAYMENT CONFIGURATION
       =====================================================
-      Change payment details only here in the future.
     */
 
     const UPI_ID = "7528826377@slc";
@@ -506,11 +634,6 @@
 
       document.getElementById("status").style.display = "block";
 
-      /*
-        Try to open the UPI app chooser / compatible
-        UPI application on the customer's device.
-      */
-
       window.location.href = upiLink;
 
     }
@@ -524,7 +647,8 @@
 
     function copyUPI() {
 
-      const button = document.querySelector(".copy-btn");
+      const button =
+        document.querySelector(".copy-btn");
 
       if (
         navigator.clipboard &&
@@ -557,8 +681,9 @@
 
 
     /*
-      Fallback for browsers where clipboard
-      access is unavailable.
+      =====================================================
+      FALLBACK
+      =====================================================
     */
 
     function showUPI() {
@@ -568,6 +693,136 @@
       );
 
     }
+
+
+    /*
+      =====================================================
+      PAYMENT VERIFICATION SUBMISSION
+      =====================================================
+
+      IMPORTANT:
+      At this stage this stores the information locally
+      and sends the member to pending.html.
+
+      A secure backend/form connection will be added next
+      so the UTR actually reaches the IBB administrator.
+    */
+
+    document
+      .getElementById("verificationForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const utr =
+          document
+            .getElementById("utr")
+            .value
+            .trim()
+            .toUpperCase();
+
+        if (!utr) {
+
+          alert(
+            "Please enter your UTR / Transaction ID."
+          );
+
+          return;
+
+        }
+
+
+        /*
+          Basic length protection.
+        */
+
+        if (utr.length < 6) {
+
+          alert(
+            "Please enter a valid UTR / Transaction ID."
+          );
+
+          return;
+
+        }
+
+
+        /*
+          Get registration information.
+        */
+
+        const name =
+          sessionStorage.getItem("ibb_name") || "";
+
+        const mobile =
+          sessionStorage.getItem("ibb_mobile") || "";
+
+        const email =
+          sessionStorage.getItem("ibb_email") || "";
+
+        const city =
+          sessionStorage.getItem("ibb_city") || "";
+
+        const state =
+          sessionStorage.getItem("ibb_state") || "";
+
+
+        /*
+          Save UTR locally for the pending page.
+        */
+
+        sessionStorage.setItem(
+          "ibb_utr",
+          utr
+        );
+
+
+        /*
+          Save submission timestamp.
+        */
+
+        sessionStorage.setItem(
+          "ibb_payment_submitted_at",
+          new Date().toISOString()
+        );
+
+
+        /*
+          Temporary status.
+        */
+
+        sessionStorage.setItem(
+          "ibb_payment_status",
+          "pending"
+        );
+
+
+        /*
+          IMPORTANT:
+          These values will later be sent to the
+          secure backend/form endpoint.
+        */
+
+        console.log("IBB Payment Submission:", {
+          name: name,
+          mobile: mobile,
+          email: email,
+          city: city,
+          state: state,
+          amount: "101",
+          utr: utr
+        });
+
+
+        /*
+          Go to pending page.
+        */
+
+        window.location.replace(
+          "pending.html"
+        );
+
+      });
 
   </script>
 
