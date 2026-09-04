@@ -11,185 +11,284 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     body {
-      background: #f5f7fb;
       min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, #dbeafe, transparent 35%),
+        radial-gradient(circle at bottom right, #e0e7ff, transparent 35%),
+        linear-gradient(135deg, #f8fafc, #eef2ff);
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 20px 15px;
+      color: #111827;
     }
 
-    .payment-box {
+    .page {
       width: 100%;
-      max-width: 500px;
-      background: #ffffff;
-      padding: 35px 25px;
-      border-radius: 18px;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+      max-width: 540px;
+    }
+
+    .brand {
       text-align: center;
+      margin-bottom: 18px;
     }
 
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      color: #111;
-      margin-bottom: 8px;
+    .brand-icon {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 19px;
+      background: linear-gradient(135deg, #111827, #374151);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(17, 24, 39, .20);
     }
 
-    .subtitle {
-      color: #666;
-      font-size: 15px;
-      margin-bottom: 28px;
+    .brand h1 {
+      font-size: 23px;
+      letter-spacing: .8px;
+      font-weight: 900;
+      color: #111827;
     }
 
-    .membership {
-      background: #f7f7f7;
-      border-radius: 14px;
-      padding: 22px;
+    .brand p {
+      margin-top: 6px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .card {
+      background: rgba(255,255,255,.97);
+      border-radius: 26px;
+      padding: 30px;
+      box-shadow:
+        0 25px 60px rgba(15, 23, 42, .12),
+        0 5px 20px rgba(15, 23, 42, .05);
+    }
+
+    .header {
       margin-bottom: 22px;
-      text-align: left;
     }
 
-    .membership h2 {
-      font-size: 21px;
-      margin-bottom: 15px;
-      color: #111;
+    .header h2 {
+      font-size: 25px;
+      color: #111827;
+      margin-bottom: 7px;
     }
 
-    .membership p {
-      margin: 9px 0;
-      color: #555;
+    .header p {
+      color: #6b7280;
+      font-size: 14px;
       line-height: 1.5;
     }
 
-    .price {
-      font-size: 42px;
-      font-weight: bold;
-      color: #111;
-      margin: 25px 0;
+    .amount-card {
+      background: linear-gradient(135deg, #111827, #374151);
+      color: white;
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
     }
 
-    .payment-title {
-      font-size: 16px;
-      font-weight: bold;
-      color: #333;
+    .amount-card small {
+      display: block;
+      color: #cbd5e1;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    .amount {
+      font-size: 38px;
+      font-weight: 900;
+    }
+
+    .one-time {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.16);
+      padding: 8px 11px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #374151;
       margin-bottom: 12px;
     }
 
-    .upi-buttons {
-      display: grid;
-      gap: 10px;
-    }
-
-    .upi-btn {
+    .pay-button {
       width: 100%;
+      min-height: 58px;
       border: none;
-      padding: 15px;
-      border-radius: 11px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #111827, #374151);
+      color: white;
       font-size: 17px;
-      font-weight: bold;
+      font-weight: 900;
       cursor: pointer;
-      transition: 0.2s;
-      color: #fff;
+      box-shadow: 0 12px 25px rgba(17,24,39,.18);
+      transition: .2s;
     }
 
-    .upi-btn:hover {
-      opacity: 0.88;
+    .pay-button:hover {
       transform: translateY(-1px);
+      opacity: .94;
     }
 
-    .gpay {
-      background: #111;
+    .pay-button:active {
+      transform: scale(.99);
     }
 
-    .phonepe {
-      background: #5f259f;
+    .upi-apps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+      margin-top: 12px;
     }
 
-    .paytm {
-      background: #00a9e0;
+    .app {
+      padding: 12px 6px;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      border-radius: 11px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: #374151;
     }
 
-    .other-upi {
-      background: #444;
+    .app-icon {
+      display: block;
+      font-size: 19px;
+      margin-bottom: 4px;
     }
 
-    .upi-info {
-      margin-top: 18px;
-      padding: 14px;
-      background: #f1f1f1;
-      border-radius: 10px;
-      font-size: 14px;
-      color: #555;
+    .upi-box {
+      margin-top: 20px;
+      padding: 16px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+    }
+
+    .upi-label {
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 7px;
+    }
+
+    .upi-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .upi-id {
-      font-weight: bold;
-      color: #111;
-      margin-top: 7px;
+      flex: 1;
+      min-width: 0;
+      font-weight: 900;
+      color: #111827;
       word-break: break-all;
+      font-size: 14px;
     }
 
     .copy-btn {
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      background: #fff;
-      color: #333;
-      padding: 8px 14px;
-      border-radius: 7px;
+      border: 1px solid #d1d5db;
+      background: white;
+      color: #111827;
+      padding: 9px 12px;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 700;
     }
 
     .copy-btn:hover {
-      background: #f5f5f5;
+      background: #f3f4f6;
     }
 
-    .back-btn {
+    .instructions {
+      margin-top: 18px;
+      padding: 15px;
+      border-radius: 12px;
+      background: #f9fafb;
+      color: #4b5563;
+      font-size: 13px;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .instructions strong {
+      color: #111827;
+    }
+
+    .status {
+      display: none;
+      margin-top: 15px;
+      padding: 14px;
+      border-radius: 12px;
+      background: #eef2ff;
+      color: #3730a3;
+      font-size: 13px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .back {
       display: block;
+      text-align: center;
       margin-top: 20px;
-      color: #555;
+      color: #6b7280;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 13px;
+      font-weight: 700;
     }
 
-    .back-btn:hover {
+    .back:hover {
       text-decoration: underline;
     }
 
-    .note {
-      margin-top: 20px;
-      font-size: 12px;
-      color: #777;
-      line-height: 1.5;
-    }
-
-    .success-message {
-      display: none;
-      margin-top: 20px;
-      padding: 15px;
-      background: #f1f1f1;
-      border-radius: 10px;
-      color: #333;
-      font-size: 14px;
+    .footer {
+      text-align: center;
+      margin-top: 16px;
+      color: #9ca3af;
+      font-size: 11px;
       line-height: 1.5;
     }
 
     @media (max-width: 480px) {
-      .payment-box {
-        padding: 28px 20px;
+      body {
+        padding: 15px 12px;
       }
 
-      .logo {
-        font-size: 21px;
+      .card {
+        padding: 24px 18px;
+        border-radius: 22px;
       }
 
-      .price {
-        font-size: 38px;
+      .brand h1 {
+        font-size: 20px;
+      }
+
+      .header h2 {
+        font-size: 22px;
+      }
+
+      .amount {
+        font-size: 34px;
       }
     }
   </style>
@@ -197,86 +296,178 @@
 
 <body>
 
-  <div class="payment-box">
+  <div class="page">
 
-    <div class="logo">
-      INDIAN BUSINESS BUREAU
-    </div>
+    <!-- BRAND -->
 
-    <div class="subtitle">
-      Membership Registration
-    </div>
+    <div class="brand">
 
-    <div class="membership">
-
-      <h2>IBB Membership</h2>
-
-      <p>
-        <strong>Registration Fee:</strong> ₹101
-      </p>
-
-      <p>
-        <strong>Payment Method:</strong> UPI
-      </p>
-
-      <p>
-        Complete the ₹101 payment to continue your registration.
-      </p>
-
-    </div>
-
-    <div class="price">
-      ₹101
-    </div>
-
-    <div class="payment-title">
-      Select Your UPI App
-    </div>
-
-    <div class="upi-buttons">
-
-      <button class="upi-btn gpay" onclick="payUPI()">
-        Pay with Google Pay
-      </button>
-
-      <button class="upi-btn phonepe" onclick="payUPI()">
-        Pay with PhonePe
-      </button>
-
-      <button class="upi-btn paytm" onclick="payUPI()">
-        Pay with Paytm
-      </button>
-
-      <button class="upi-btn other-upi" onclick="payUPI()">
-        Pay with Other UPI App
-      </button>
-
-    </div>
-
-    <div class="upi-info">
-      Pay to UPI ID:
-
-      <div class="upi-id" id="upiId">
-        7528826377@slc
+      <div class="brand-icon">
+        IBB
       </div>
 
-      <button class="copy-btn" onclick="copyUPI()">
-        Copy UPI ID
+      <h1>
+        INDIAN BUSINESS BUREAU
+      </h1>
+
+      <p>
+        Professional Membership Registration
+      </p>
+
+    </div>
+
+
+    <!-- PAYMENT CARD -->
+
+    <div class="card">
+
+      <div class="header">
+
+        <h2>
+          Complete Your Membership
+        </h2>
+
+        <p>
+          Complete the one-time ₹101 registration payment
+          using any UPI app.
+        </p>
+
+      </div>
+
+
+      <!-- AMOUNT -->
+
+      <div class="amount-card">
+
+        <div>
+
+          <small>
+            Membership Registration Fee
+          </small>
+
+          <div class="amount">
+            ₹101
+          </div>
+
+        </div>
+
+        <div class="one-time">
+          ONE TIME
+        </div>
+
+      </div>
+
+
+      <!-- MAIN PAYMENT BUTTON -->
+
+      <div class="section-title">
+        Pay securely using UPI
+      </div>
+
+      <button
+        type="button"
+        class="pay-button"
+        onclick="payUPI()"
+      >
+        PAY ₹101 WITH UPI →
       </button>
+
+
+      <!-- UPI APP INFORMATION -->
+
+      <div class="upi-apps">
+
+        <div class="app">
+          <span class="app-icon">G</span>
+          Google Pay
+        </div>
+
+        <div class="app">
+          <span class="app-icon">P</span>
+          PhonePe
+        </div>
+
+        <div class="app">
+          <span class="app-icon">₹</span>
+          Paytm / UPI
+        </div>
+
+      </div>
+
+
+      <!-- UPI ID -->
+
+      <div class="upi-box">
+
+        <div class="upi-label">
+          Or pay directly to this UPI ID
+        </div>
+
+        <div class="upi-row">
+
+          <div
+            class="upi-id"
+            id="upiId"
+          >
+            7528826377@slc
+          </div>
+
+          <button
+            type="button"
+            class="copy-btn"
+            onclick="copyUPI()"
+          >
+            COPY
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- INSTRUCTIONS -->
+
+      <div class="instructions">
+
+        <strong>How it works:</strong><br>
+
+        1. Tap <strong>PAY ₹101 WITH UPI</strong>.<br>
+        2. Your phone will open a compatible UPI app.<br>
+        3. Check that the amount is <strong>₹101</strong>.<br>
+        4. Confirm the payment in your UPI app.<br>
+        5. Return to this website after payment.
+
+      </div>
+
+
+      <!-- STATUS -->
+
+      <div
+        class="status"
+        id="status"
+      >
+        UPI payment app is being opened.
+        Please complete your ₹101 payment and return here.
+      </div>
+
+
+      <a
+        href="join.html"
+        class="back"
+      >
+        ← Back to Registration
+      </a>
+
     </div>
 
-    <div class="success-message" id="successMessage">
-      UPI payment screen has been opened. After completing the payment,
-      return to this website for registration confirmation.
-    </div>
 
-    <a href="join.html" class="back-btn">
-      ← Back to Registration
-    </a>
+    <div class="footer">
 
-    <div class="note">
-      Payment will open a compatible UPI app installed on your device.
-      Payment confirmation is not automatically verified by this website.
+      Indian Business Bureau • Membership Registration<br>
+
+      Please verify the recipient name and amount
+      before confirming your UPI payment.
+
     </div>
 
   </div>
@@ -284,9 +475,25 @@
 
   <script>
 
+    /*
+      =====================================================
+      IBB PAYMENT CONFIGURATION
+      =====================================================
+      Change payment details only here in the future.
+    */
+
     const UPI_ID = "7528826377@slc";
+
     const BUSINESS_NAME = "Indian Business Bureau";
+
     const AMOUNT = "101.00";
+
+
+    /*
+      =====================================================
+      OPEN UPI PAYMENT
+      =====================================================
+    */
 
     function payUPI() {
 
@@ -297,30 +504,47 @@
         "&am=" + encodeURIComponent(AMOUNT) +
         "&cu=INR";
 
-      document.getElementById("successMessage").style.display = "block";
+      document.getElementById("status").style.display = "block";
+
+      /*
+        Try to open the UPI app chooser / compatible
+        UPI application on the customer's device.
+      */
 
       window.location.href = upiLink;
+
     }
 
+
+    /*
+      =====================================================
+      COPY UPI ID
+      =====================================================
+    */
 
     function copyUPI() {
 
       const button = document.querySelector(".copy-btn");
 
-      if (navigator.clipboard && window.isSecureContext) {
+      if (
+        navigator.clipboard &&
+        window.isSecureContext
+      ) {
 
         navigator.clipboard.writeText(UPI_ID)
           .then(function () {
 
-            button.innerText = "Copied!";
+            button.innerText = "COPIED!";
 
             setTimeout(function () {
-              button.innerText = "Copy UPI ID";
+              button.innerText = "COPY";
             }, 2000);
 
           })
           .catch(function () {
+
             showUPI();
+
           });
 
       } else {
@@ -328,12 +552,20 @@
         showUPI();
 
       }
+
     }
 
 
+    /*
+      Fallback for browsers where clipboard
+      access is unavailable.
+    */
+
     function showUPI() {
 
-      alert("UPI ID: " + UPI_ID);
+      alert(
+        "UPI ID: " + UPI_ID
+      );
 
     }
 
