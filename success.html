@@ -4,106 +4,106 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>IBB Membership | Confirmation</title>
+  <title>Welcome to IBB — Indian Business Bureau</title>
 
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f6f8fb;
-      color: #101828;
       min-height: 100vh;
-    }
-
-    .topbar {
-      background: #0b1f3a;
-      color: white;
-      text-align: center;
-      padding: 10px 15px;
-      font-size: 13px;
-    }
-
-    header {
-      background: white;
-      border-bottom: 1px solid #e4e7ec;
-      padding: 18px 5%;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #0b1f3a;
-      font-size: 18px;
-      font-weight: 900;
-    }
-
-    .logo {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: #0b1f3a;
-      color: #f2c14e;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
+      background:
+        radial-gradient(circle at top left, #dbeafe, transparent 35%),
+        radial-gradient(circle at bottom right, #e0e7ff, transparent 35%),
+        linear-gradient(135deg, #f8fafc, #eef2ff);
+      color: #111827;
+      padding: 20px 15px;
     }
 
     .page {
-      min-height: calc(100vh - 90px);
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .brand-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 12px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #111827, #374151);
+      color: white;
       display: flex;
+      align-items: center;
       justify-content: center;
-      padding: 50px 20px;
+      font-weight: 900;
+      font-size: 20px;
+      box-shadow: 0 12px 30px rgba(17, 24, 39, .20);
+    }
+
+    .brand h1 {
+      font-size: 24px;
+      letter-spacing: .8px;
+      color: #111827;
+    }
+
+    .brand p {
+      margin-top: 6px;
+      color: #6b7280;
+      font-size: 14px;
     }
 
     .card {
-      width: 100%;
-      max-width: 600px;
-      background: white;
-      border: 1px solid #e4e7ec;
-      border-radius: 26px;
-      padding: 42px 32px;
+      background: rgba(255,255,255,.97);
+      border-radius: 28px;
+      padding: 38px 30px;
+      box-shadow:
+        0 25px 60px rgba(15,23,42,.12),
+        0 5px 20px rgba(15,23,42,.05);
       text-align: center;
-      box-shadow: 0 20px 60px rgba(16, 24, 40, .09);
     }
 
-    .check {
-      width: 78px;
-      height: 78px;
+    .success-icon {
+      width: 82px;
+      height: 82px;
+      margin: 0 auto 22px;
       border-radius: 50%;
       background: #eaf8f2;
       color: #13795b;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 22px;
-      font-size: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
       font-weight: 900;
     }
 
-    .badge {
+    .verified {
       display: inline-block;
-      background: #fff7e6;
-      color: #b87900;
-      padding: 7px 12px;
+      padding: 7px 13px;
       border-radius: 30px;
+      background: #eaf8f2;
+      color: #13795b;
       font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 18px;
+      font-weight: 900;
+      margin-bottom: 16px;
     }
 
-    h1 {
-      color: #0b1f3a;
-      font-size: 36px;
-      line-height: 1.15;
+    h2 {
+      font-size: 32px;
+      color: #111827;
       margin-bottom: 12px;
     }
 
-    .intro {
+    .welcome {
       color: #667085;
       font-size: 15px;
       line-height: 1.6;
@@ -111,121 +111,142 @@
     }
 
     .member-card {
-      background: #0b1f3a;
+      background: linear-gradient(135deg, #111827, #374151);
       color: white;
       border-radius: 20px;
       padding: 25px;
       text-align: left;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
-    .member-top {
+    .member-heading {
       display: flex;
       justify-content: space-between;
-      gap: 15px;
       align-items: flex-start;
+      gap: 15px;
       margin-bottom: 28px;
     }
 
-    .member-title {
-      font-size: 13px;
-      color: #d0d5dd;
+    .member-label {
+      color: #cbd5e1;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .7px;
       margin-bottom: 5px;
     }
 
     .member-name {
       font-size: 23px;
       font-weight: 900;
+      word-break: break-word;
     }
 
-    .member-badge {
+    .member-status {
       background: #d99a24;
       color: white;
-      padding: 6px 9px;
+      padding: 7px 10px;
       border-radius: 8px;
       font-size: 10px;
       font-weight: 900;
+      white-space: nowrap;
     }
 
-    .member-details {
+    .details {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 20px;
     }
 
     .detail span {
       display: block;
       color: #98a2b3;
-      font-size: 11px;
-      margin-bottom: 4px;
+      font-size: 10px;
       text-transform: uppercase;
+      margin-bottom: 5px;
     }
 
     .detail strong {
+      display: block;
+      color: white;
       font-size: 14px;
       word-break: break-word;
     }
 
-    .notice {
+    .community-box {
       background: #f8fafc;
       border: 1px solid #e4e7ec;
-      border-radius: 14px;
-      padding: 16px;
-      text-align: left;
-      color: #475467;
-      font-size: 13px;
-      line-height: 1.55;
-      margin-bottom: 22px;
+      border-radius: 17px;
+      padding: 20px;
+      margin-bottom: 20px;
     }
 
-    .whatsapp {
+    .community-box h3 {
+      font-size: 18px;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .community-box p {
+      color: #667085;
+      font-size: 13px;
+      line-height: 1.55;
+      margin-bottom: 17px;
+    }
+
+    .whatsapp-btn {
       display: block;
       width: 100%;
-      background: #13795b;
-      color: white;
       padding: 16px;
       border-radius: 13px;
-      font-weight: 900;
+      background: #13795b;
+      color: white;
       text-decoration: none;
-      margin-bottom: 12px;
+      font-size: 15px;
+      font-weight: 900;
       transition: .2s;
     }
 
-    .whatsapp:hover {
-      transform: translateY(-2px);
+    .whatsapp-btn:hover {
+      transform: translateY(-1px);
       opacity: .92;
     }
 
-    .home {
-      display: block;
-      width: 100%;
-      border: 1px solid #d0d5dd;
-      background: white;
-      color: #0b1f3a;
-      padding: 15px;
-      border-radius: 13px;
-      font-weight: 800;
-      text-decoration: none;
-    }
-
-    .footer-note {
+    .support {
+      margin-top: 18px;
       color: #98a2b3;
       font-size: 11px;
-      margin-top: 20px;
       line-height: 1.5;
+    }
+
+    .home-btn {
+      display: block;
+      margin-top: 20px;
+      color: #667085;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .home-btn:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 500px) {
       .card {
-        padding: 32px 20px;
+        padding: 30px 18px;
       }
 
-      h1 {
-        font-size: 30px;
+      h2 {
+        font-size: 27px;
       }
 
-      .member-details {
+      .details {
         grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .member-heading {
+        flex-direction: column;
       }
     }
   </style>
@@ -233,151 +254,252 @@
 
 <body>
 
-  <div class="topbar">
-    Indian Business Bureau • Membership
-  </div>
-
-  <header>
-    <div class="brand">
-      <div class="logo">IBB</div>
-      Indian Business Bureau
-    </div>
-  </header>
-
   <main class="page">
 
-    <div class="card">
+    <!-- BRAND -->
 
-      <div class="check">✓</div>
+    <div class="brand">
 
-      <div class="badge">
-        IBB MEMBERSHIP
+      <div class="brand-icon">
+        IBB
       </div>
 
       <h1>
-        Membership Confirmed
+        INDIAN BUSINESS BUREAU
       </h1>
 
-      <p class="intro">
-        Welcome to the Indian Business Bureau community.
-        Your membership details are shown below.
+      <p>
+        Professional Business Community
       </p>
-
-      <div class="member-card">
-
-        <div class="member-top">
-
-          <div>
-            <div class="member-title">
-              Indian Business Bureau
-            </div>
-
-            <div class="member-name" id="memberName">
-              IBB Member
-            </div>
-          </div>
-
-          <div class="member-badge">
-            MEMBER
-          </div>
-
-        </div>
-
-        <div class="member-details">
-
-          <div class="detail">
-            <span>Member ID</span>
-            <strong id="memberId">
-              IBB-PENDING
-            </strong>
-          </div>
-
-          <div class="detail">
-            <span>Membership</span>
-            <strong>₹101</strong>
-          </div>
-
-          <div class="detail">
-            <span>Mobile</span>
-            <strong id="memberMobile">
-              —
-            </strong>
-          </div>
-
-          <div class="detail">
-            <span>Status</span>
-            <strong>Active</strong>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="notice">
-        <strong>Welcome to IBB.</strong><br>
-        Your community access link will be provided after
-        the membership process is successfully verified.
-      </div>
-
-      <!--
-        IMPORTANT:
-        Replace this placeholder only after the WhatsApp
-        Community link and real payment verification system
-        are configured.
-      -->
-
-      <a
-        href="#"
-        class="whatsapp"
-        onclick="showComingSoon(event)"
-      >
-        JOIN IBB WHATSAPP COMMUNITY
-      </a>
-
-      <a href="index.html" class="home">
-        Back to IBB Homepage
-      </a>
-
-      <div class="footer-note">
-        Membership activation and community access should
-        only be granted after verified payment confirmation.
-      </div>
 
     </div>
 
+
+    <!-- MAIN CARD -->
+
+    <section class="card">
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+      <div class="verified">
+        PAYMENT VERIFIED
+      </div>
+
+      <h2>
+        Welcome to IBB
+      </h2>
+
+      <p class="welcome">
+        Your membership registration is complete.
+        Welcome to the Indian Business Bureau community.
+      </p>
+
+
+      <!-- MEMBER CARD -->
+
+      <div class="member-card">
+
+        <div class="member-heading">
+
+          <div>
+
+            <div class="member-label">
+              Indian Business Bureau Member
+            </div>
+
+            <div
+              class="member-name"
+              id="memberName"
+            >
+              IBB Member
+            </div>
+
+          </div>
+
+          <div class="member-status">
+            ACTIVE
+          </div>
+
+        </div>
+
+
+        <div class="details">
+
+          <div class="detail">
+
+            <span>Member ID</span>
+
+            <strong id="memberId">
+              IBB-MEMBER
+            </strong>
+
+          </div>
+
+          <div class="detail">
+
+            <span>Membership Fee</span>
+
+            <strong>
+              ₹101
+            </strong>
+
+          </div>
+
+          <div class="detail">
+
+            <span>Mobile</span>
+
+            <strong id="memberMobile">
+              —
+            </strong>
+
+          </div>
+
+          <div class="detail">
+
+            <span>Location</span>
+
+            <strong id="memberLocation">
+              —
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- WHATSAPP COMMUNITY -->
+
+      <div class="community-box">
+
+        <h3>
+          Join the IBB Community
+        </h3>
+
+        <p>
+          Connect with other members, discover business
+          opportunities and participate in the IBB community.
+        </p>
+
+        <!--
+          IMPORTANT:
+          Replace the # below with your REAL WhatsApp
+          Community invite link only after payment
+          verification is connected.
+        -->
+
+        <a
+          href="#"
+          class="whatsapp-btn"
+          id="whatsappButton"
+          onclick="joinWhatsApp(event)"
+        >
+          JOIN WHATSAPP COMMUNITY →
+        </a>
+
+      </div>
+
+
+      <div class="support">
+        Keep your membership details safe.
+        For membership support, contact IBB through
+        your official support channel.
+      </div>
+
+
+      <a
+        href="index.html"
+        class="home-btn"
+      >
+        ← Back to IBB Homepage
+      </a>
+
+    </section>
+
   </main>
+
 
   <script>
 
     /*
-      Read registration information saved by join.html.
+      =====================================================
+      IBB MEMBER INFORMATION
+      =====================================================
     */
 
-    const name = localStorage.getItem("ibb_name");
-    const mobile = localStorage.getItem("ibb_mobile");
+    const name =
+      sessionStorage.getItem("ibb_name") || "IBB Member";
 
-    if (name) {
-      document.getElementById("memberName").textContent = name;
-    }
+    const mobile =
+      sessionStorage.getItem("ibb_mobile") || "—";
 
-    if (mobile) {
-      document.getElementById("memberMobile").textContent = mobile;
+    const city =
+      sessionStorage.getItem("ibb_city") || "";
+
+    const state =
+      sessionStorage.getItem("ibb_state") || "";
+
+
+    /*
+      =====================================================
+      DISPLAY MEMBER INFORMATION
+      =====================================================
+    */
+
+    document.getElementById("memberName").textContent = name;
+
+    document.getElementById("memberMobile").textContent =
+      mobile;
+
+
+    const locationText =
+      city && state
+        ? city + ", " + state
+        : (city || state || "—");
+
+    document.getElementById("memberLocation").textContent =
+      locationText;
+
+
+    /*
+      =====================================================
+      TEMPORARY MEMBER ID
+      =====================================================
+
+      Real Member IDs should be generated by the backend
+      after verified payment.
+    */
+
+    const existingMemberId =
+      sessionStorage.getItem("ibb_member_id");
+
+    if (existingMemberId) {
+
+      document.getElementById("memberId").textContent =
+        existingMemberId;
+
     }
 
 
     /*
-      Temporary Member ID.
+      =====================================================
+      WHATSAPP
+      =====================================================
 
-      A real unique Member ID should be generated by the
-      backend after verified payment.
+      DO NOT put a public WhatsApp link here until the
+      payment verification system is connected.
     */
 
-    function showComingSoon(event) {
+    function joinWhatsApp(event) {
 
       event.preventDefault();
 
       alert(
-        "WhatsApp Community access will be activated after payment verification."
+        "Your WhatsApp Community access will be activated after verified membership payment."
       );
 
     }
