@@ -1,5 +1,5 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,7 +12,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Avenir Next", Inter, "Segoe UI", Arial, sans-serif;
     }
 
     body {
@@ -30,7 +30,7 @@
 
     .page {
       width: 100%;
-      max-width: 540px;
+      max-width: 560px;
     }
 
     .brand {
@@ -50,14 +50,13 @@
       color: #fff;
       font-size: 20px;
       font-weight: 900;
-      box-shadow: 0 12px 30px rgba(17, 24, 39, .20);
+      box-shadow: 0 12px 30px rgba(17,24,39,.20);
     }
 
     .brand h1 {
       font-size: 23px;
       letter-spacing: .8px;
       font-weight: 900;
-      color: #111827;
     }
 
     .brand p {
@@ -71,8 +70,8 @@
       border-radius: 26px;
       padding: 30px;
       box-shadow:
-        0 25px 60px rgba(15, 23, 42, .12),
-        0 5px 20px rgba(15, 23, 42, .05);
+        0 25px 60px rgba(15,23,42,.12),
+        0 5px 20px rgba(15,23,42,.05);
     }
 
     .header {
@@ -81,14 +80,13 @@
 
     .header h2 {
       font-size: 25px;
-      color: #111827;
       margin-bottom: 7px;
     }
 
     .header p {
       color: #6b7280;
       font-size: 14px;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .amount-card {
@@ -135,18 +133,18 @@
       min-height: 58px;
       border: none;
       border-radius: 14px;
-      background: linear-gradient(135deg, #111827, #374151);
+      background: linear-gradient(135deg, #13795b, #0f9f72);
       color: white;
       font-size: 17px;
       font-weight: 900;
       cursor: pointer;
-      box-shadow: 0 12px 25px rgba(17,24,39,.18);
+      box-shadow: 0 12px 25px rgba(19,121,91,.20);
       transition: .2s;
     }
 
     .pay-button:hover {
       transform: translateY(-1px);
-      opacity: .94;
+      opacity: .95;
     }
 
     .pay-button:active {
@@ -173,7 +171,7 @@
 
     .app-icon {
       display: block;
-      font-size: 19px;
+      font-size: 18px;
       margin-bottom: 4px;
     }
 
@@ -214,11 +212,7 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 12px;
-      font-weight: 700;
-    }
-
-    .copy-btn:hover {
-      background: #f3f4f6;
+      font-weight: 800;
     }
 
     .instructions {
@@ -228,8 +222,7 @@
       background: #f9fafb;
       color: #4b5563;
       font-size: 13px;
-      line-height: 1.6;
-      text-align: left;
+      line-height: 1.65;
     }
 
     .instructions strong {
@@ -248,8 +241,6 @@
       text-align: center;
     }
 
-    /* UTR SECTION */
-
     .verification-box {
       margin-top: 22px;
       padding: 20px;
@@ -260,14 +251,13 @@
 
     .verification-box h3 {
       font-size: 17px;
-      color: #111827;
       margin-bottom: 7px;
     }
 
     .verification-box p {
       color: #6b7280;
       font-size: 12px;
-      line-height: 1.5;
+      line-height: 1.55;
       margin-bottom: 15px;
     }
 
@@ -303,7 +293,7 @@
       margin-top: 12px;
       border: none;
       border-radius: 12px;
-      background: #13795b;
+      background: #111827;
       color: white;
       font-size: 14px;
       font-weight: 900;
@@ -330,10 +320,6 @@
       text-decoration: none;
       font-size: 13px;
       font-weight: 700;
-    }
-
-    .back:hover {
-      text-decoration: underline;
     }
 
     .footer {
@@ -367,464 +353,361 @@
       }
     }
   </style>
-
 </head>
 
 <body>
 
-  <div class="page">
+<div class="page">
 
-```
-<!-- BRAND -->
-
-<div class="brand">
-
-  <div class="brand-icon">
-    IBB
+  <div class="brand">
+    <div class="brand-icon">IBB</div>
+    <h1>INDIAN BUSINESS BUREAU</h1>
+    <p>Professional Membership Registration</p>
   </div>
 
-  <h1>
-    INDIAN BUSINESS BUREAU
-  </h1>
+  <div class="card">
 
-  <p>
-    Professional Membership Registration
-  </p>
+    <div class="header">
+      <h2>Complete Your Membership</h2>
+      <p>
+        Complete the one-time ₹101 registration payment
+        using UPI, then submit your UTR for verification.
+      </p>
+    </div>
 
-</div>
+    <div class="amount-card">
+      <div>
+        <small>Membership Registration Fee</small>
+        <div class="amount">₹101</div>
+      </div>
 
+      <div class="one-time">ONE TIME</div>
+    </div>
 
-<!-- PAYMENT CARD -->
+    <div class="section-title">
+      Step 1 — Pay ₹101 using UPI
+    </div>
 
-<div class="card">
+    <button
+      type="button"
+      class="pay-button"
+      onclick="payUPI()"
+    >
+      PAY ₹101 WITH UPI →
+    </button>
 
-  <div class="header">
+    <div class="upi-apps">
+      <div class="app">
+        <span class="app-icon">G</span>
+        Google Pay
+      </div>
 
-    <h2>
-      Complete Your Membership
-    </h2>
+      <div class="app">
+        <span class="app-icon">P</span>
+        PhonePe
+      </div>
 
-    <p>
-      Complete the one-time ₹101 registration payment
-      using any UPI app.
-    </p>
+      <div class="app">
+        <span class="app-icon">₹</span>
+        Other UPI
+      </div>
+    </div>
 
-  </div>
+    <div class="upi-box">
 
+      <div class="upi-label">
+        Or pay directly to this UPI ID
+      </div>
 
-  <!-- AMOUNT -->
+      <div class="upi-row">
+        <div class="upi-id" id="upiId">
+          7528826377@slc
+        </div>
 
-  <div class="amount-card">
-
-    <div>
-
-      <small>
-        Membership Registration Fee
-      </small>
-
-      <div class="amount">
-        ₹101
+        <button
+          type="button"
+          class="copy-btn"
+          onclick="copyUPI()"
+        >
+          COPY
+        </button>
       </div>
 
     </div>
 
-    <div class="one-time">
-      ONE TIME
+    <div class="instructions">
+      <strong>Payment steps</strong><br><br>
+
+      1. Tap <strong>PAY ₹101 WITH UPI</strong>.<br>
+      2. Select/confirm your UPI app.<br>
+      3. Make sure the amount is exactly <strong>₹101</strong>.<br>
+      4. Complete the payment in your UPI app.<br>
+      5. Return to this page.<br>
+      6. Enter the UTR / Transaction ID below.<br>
+      7. Submit your payment details for verification.
     </div>
 
-  </div>
-
-
-  <!-- MAIN PAYMENT BUTTON -->
-
-  <div class="section-title">
-    Pay securely using UPI
-  </div>
-
-  <button
-    type="button"
-    class="pay-button"
-    onclick="payUPI()"
-  >
-    PAY ₹101 WITH UPI →
-  </button>
-
-
-  <!-- UPI APP INFORMATION -->
-
-  <div class="upi-apps">
-
-    <div class="app">
-      <span class="app-icon">G</span>
-      Google Pay
+    <div class="status" id="status">
+      UPI payment screen opened. Complete the payment and
+      return to this page.
     </div>
 
-    <div class="app">
-      <span class="app-icon">P</span>
-      PhonePe
-    </div>
+    <div class="verification-box">
 
-    <div class="app">
-      <span class="app-icon">₹</span>
-      Paytm / UPI
-    </div>
+      <h3>Step 2 — Payment Verification</h3>
 
-  </div>
+      <p>
+        After completing the payment, enter the UTR /
+        Transaction ID shown in your UPI app.
+        Your membership remains pending until the payment
+        is manually verified.
+      </p>
 
+      <form id="verificationForm">
 
-  <!-- UPI ID -->
+        <label class="utr-label" for="utr">
+          UTR / Transaction ID *
+        </label>
 
-  <div class="upi-box">
+        <input
+          type="text"
+          id="utr"
+          class="utr-input"
+          placeholder="Enter UTR / Transaction ID"
+          maxlength="50"
+          autocomplete="off"
+          required
+        >
 
-    <div class="upi-label">
-      Or pay directly to this UPI ID
-    </div>
+        <button
+          type="submit"
+          class="verify-button"
+        >
+          CONTINUE TO VERIFICATION FORM →
+        </button>
 
-    <div class="upi-row">
+      </form>
 
-      <div
-        class="upi-id"
-        id="upiId"
-      >
-        7528826377@slc
+      <div class="verify-note">
+        Never enter your UPI PIN, OTP, password or banking password.
       </div>
 
-      <button
-        type="button"
-        class="copy-btn"
-        onclick="copyUPI()"
-      >
-        COPY
-      </button>
-
     </div>
 
-  </div>
-
-
-  <!-- INSTRUCTIONS -->
-
-  <div class="instructions">
-
-    <strong>How it works:</strong><br>
-
-    1. Tap <strong>PAY ₹101 WITH UPI</strong>.<br>
-    2. Your phone will open a compatible UPI app.<br>
-    3. Check that the amount is <strong>₹101</strong>.<br>
-    4. Confirm the payment in your UPI app.<br>
-    5. Return to this website.<br>
-    6. Enter your UTR / Transaction ID below.<br>
-    7. Submit the payment for verification.
+    <a href="join.html" class="back">
+      ← Back to Registration
+    </a>
 
   </div>
 
-
-  <!-- PAYMENT STATUS -->
-
-  <div
-    class="status"
-    id="status"
-  >
-    UPI payment app is being opened.
-    Please complete your ₹101 payment and return here.
+  <div class="footer">
+    Indian Business Bureau • Membership Registration<br>
+    Please verify the recipient and amount before confirming payment.
   </div>
-
-
-  <!-- UTR VERIFICATION -->
-
-  <div class="verification-box">
-
-    <h3>
-      Payment Verification
-    </h3>
-
-    <p>
-      After completing the ₹101 payment, enter the
-      UTR / Transaction ID shown in your UPI app.
-      Your membership will remain pending until the
-      payment is verified.
-    </p>
-
-    <form id="verificationForm">
-
-      <label
-        class="utr-label"
-        for="utr"
-      >
-        UTR / Transaction ID *
-      </label>
-
-      <input
-        type="text"
-        id="utr"
-        class="utr-input"
-        placeholder="Enter UTR / Transaction ID"
-        maxlength="50"
-        autocomplete="off"
-        required
-      >
-
-      <button
-        type="submit"
-        class="verify-button"
-      >
-        SUBMIT FOR VERIFICATION →
-      </button>
-
-    </form>
-
-    <div class="verify-note">
-      Do not enter your UPI PIN, password or OTP here.
-    </div>
-
-  </div>
-
-
-  <a
-    href="join.html"
-    class="back"
-  >
-    ← Back to Registration
-  </a>
 
 </div>
 
+<script>
 
-<div class="footer">
+  /* ==============================
+     IBB PAYMENT CONFIG
+  ============================== */
 
-  Indian Business Bureau • Membership Registration<br>
+  const UPI_ID = "7528826377@slc";
+  const BUSINESS_NAME = "Indian Business Bureau";
+  const AMOUNT = "101.00";
 
-  Please verify the recipient name and amount
-  before confirming your UPI payment.
+  /*
+     Google Form
+  */
 
-</div>
-```
+  const GOOGLE_FORM_URL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSfkKFDLcQU34fKuIPWV042OPGfOgBqvyFhB_TLW1LSWB9ISPQ/viewform";
 
-  </div>
 
-  <script>
+  /*
+     Exact Google Form entry IDs
+  */
 
-    /*
-      =====================================================
-      IBB PAYMENT CONFIGURATION
-      =====================================================
-    */
+  const NAME_ENTRY = "entry.1710482705";
+  const MOBILE_ENTRY = "entry.1711873210";
+  const UTR_ENTRY = "entry.2000855266";
 
-    const UPI_ID = "7528826377@slc";
 
-    const BUSINESS_NAME = "Indian Business Bureau";
+  /* ==============================
+     OPEN UPI
+  ============================== */
 
-    const AMOUNT = "101.00";
+  function payUPI() {
 
+    const upiLink =
+      "upi://pay" +
+      "?pa=" + encodeURIComponent(UPI_ID) +
+      "&pn=" + encodeURIComponent(BUSINESS_NAME) +
+      "&am=" + encodeURIComponent(AMOUNT) +
+      "&cu=INR";
 
-    /*
-      =====================================================
-      OPEN UPI PAYMENT
-      =====================================================
-    */
+    document.getElementById("status").style.display = "block";
 
-    function payUPI() {
+    window.location.href = upiLink;
+  }
 
-      const upiLink =
-        "upi://pay" +
-        "?pa=" + encodeURIComponent(UPI_ID) +
-        "&pn=" + encodeURIComponent(BUSINESS_NAME) +
-        "&am=" + encodeURIComponent(AMOUNT) +
-        "&cu=INR";
 
-      document.getElementById("status").style.display = "block";
+  /* ==============================
+     COPY UPI ID
+  ============================== */
 
-      window.location.href = upiLink;
+  function copyUPI() {
 
-    }
+    const button =
+      document.querySelector(".copy-btn");
 
+    if (
+      navigator.clipboard &&
+      window.isSecureContext
+    ) {
 
-    /*
-      =====================================================
-      COPY UPI ID
-      =====================================================
-    */
+      navigator.clipboard
+        .writeText(UPI_ID)
+        .then(function () {
 
-    function copyUPI() {
+          button.innerText = "COPIED!";
 
-      const button =
-        document.querySelector(".copy-btn");
+          setTimeout(function () {
+            button.innerText = "COPY";
+          }, 2000);
 
-      if (
-        navigator.clipboard &&
-        window.isSecureContext
-      ) {
+        })
+        .catch(function () {
 
-        navigator.clipboard.writeText(UPI_ID)
-          .then(function () {
-
-            button.innerText = "COPIED!";
-
-            setTimeout(function () {
-              button.innerText = "COPY";
-            }, 2000);
-
-          })
-          .catch(function () {
-
-            showUPI();
-
-          });
-
-      } else {
-
-        showUPI();
-
-      }
-
-    }
-
-
-    /*
-      =====================================================
-      FALLBACK
-      =====================================================
-    */
-
-    function showUPI() {
-
-      alert(
-        "UPI ID: " + UPI_ID
-      );
-
-    }
-
-
-    /*
-      =====================================================
-      PAYMENT VERIFICATION SUBMISSION
-      =====================================================
-
-      IMPORTANT:
-      At this stage this stores the information locally
-      and sends the member to pending.html.
-
-      A secure backend/form connection will be added next
-      so the UTR actually reaches the IBB administrator.
-    */
-
-    document
-      .getElementById("verificationForm")
-      .addEventListener("submit", function(event) {
-
-        event.preventDefault();
-
-        const utr =
-          document
-            .getElementById("utr")
-            .value
-            .trim()
-            .toUpperCase();
-
-        if (!utr) {
-
-          alert(
-            "Please enter your UTR / Transaction ID."
-          );
-
-          return;
-
-        }
-
-
-        /*
-          Basic length protection.
-        */
-
-        if (utr.length < 6) {
-
-          alert(
-            "Please enter a valid UTR / Transaction ID."
-          );
-
-          return;
-
-        }
-
-
-        /*
-          Get registration information.
-        */
-
-        const name =
-          sessionStorage.getItem("ibb_name") || "";
-
-        const mobile =
-          sessionStorage.getItem("ibb_mobile") || "";
-
-        const email =
-          sessionStorage.getItem("ibb_email") || "";
-
-        const city =
-          sessionStorage.getItem("ibb_city") || "";
-
-        const state =
-          sessionStorage.getItem("ibb_state") || "";
-
-
-        /*
-          Save UTR locally for the pending page.
-        */
-
-        sessionStorage.setItem(
-          "ibb_utr",
-          utr
-        );
-
-
-        /*
-          Save submission timestamp.
-        */
-
-        sessionStorage.setItem(
-          "ibb_payment_submitted_at",
-          new Date().toISOString()
-        );
-
-
-        /*
-          Temporary status.
-        */
-
-        sessionStorage.setItem(
-          "ibb_payment_status",
-          "pending"
-        );
-
-
-        /*
-          IMPORTANT:
-          These values will later be sent to the
-          secure backend/form endpoint.
-        */
-
-        console.log("IBB Payment Submission:", {
-          name: name,
-          mobile: mobile,
-          email: email,
-          city: city,
-          state: state,
-          amount: "101",
-          utr: utr
+          fallbackCopy();
         });
 
+    } else {
 
-        /*
-          Go to pending page.
-        */
+      fallbackCopy();
+    }
+  }
 
-        window.location.replace(
-          "pending.html"
+
+  function fallbackCopy() {
+
+    alert(
+      "UPI ID: " + UPI_ID
+    );
+  }
+
+
+  /* ==============================
+     SUBMIT UTR
+  ============================== */
+
+  document
+    .getElementById("verificationForm")
+    .addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const utr =
+        document
+          .getElementById("utr")
+          .value
+          .trim()
+          .toUpperCase();
+
+      if (!utr) {
+
+        alert(
+          "Please enter your UTR / Transaction ID."
         );
 
-      });
+        return;
+      }
 
-  </script>
+
+      if (utr.length < 6) {
+
+        alert(
+          "Please enter a valid UTR / Transaction ID."
+        );
+
+        return;
+      }
+
+
+      /*
+         Get registration data
+         from join.html
+      */
+
+      const name =
+        sessionStorage.getItem("ibb_name") || "";
+
+      const mobile =
+        sessionStorage.getItem("ibb_mobile") || "";
+
+
+      if (!name || !mobile) {
+
+        alert(
+          "Your registration details could not be found. " +
+          "Please go back and complete registration again."
+        );
+
+        window.location.href = "join.html";
+
+        return;
+      }
+
+
+      /*
+         Save locally for pending.html
+      */
+
+      sessionStorage.setItem(
+        "ibb_utr",
+        utr
+      );
+
+      sessionStorage.setItem(
+        "ibb_payment_status",
+        "pending"
+      );
+
+      sessionStorage.setItem(
+        "ibb_payment_submitted_at",
+        new Date().toISOString()
+      );
+
+
+      /*
+         Build Google Form pre-filled URL
+      */
+
+      const formURL =
+        GOOGLE_FORM_URL +
+        "?usp=pp_url" +
+        "&" + NAME_ENTRY +
+        "=" + encodeURIComponent(name) +
+        "&" + MOBILE_ENTRY +
+        "=" + encodeURIComponent(mobile) +
+        "&" + UTR_ENTRY +
+        "=" + encodeURIComponent(utr);
+
+
+      /*
+         Open Google Form.
+
+         User must press SUBMIT
+         inside Google Form.
+      */
+
+      window.location.href = formURL;
+
+    });
+
+</script>
 
 </body>
 </html>
+```
