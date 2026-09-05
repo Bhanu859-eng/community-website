@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-        content="Indian Business Bureau — a community connecting people, businesses and legitimate opportunities.">
+        content="Indian Business Bureau — a community connecting people, businesses and legitimate business campaigns, tasks and opportunities.">
 
-  <title>Indian Business Bureau | Join the Community</title>
+  <meta name="keywords"
+        content="Indian Business Bureau, IBB, business community, business campaigns, member tasks, opportunities, India">
+
+  <meta name="theme-color" content="#071a33">
+
+  <title>Indian Business Bureau | People • Businesses • Opportunities</title>
 
   <style>
     :root{
@@ -22,7 +28,6 @@
       --text:#101828;
       --muted:#667085;
       --border:#e4e7ec;
-      --danger:#b42318;
       --shadow:0 20px 70px rgba(7,26,51,.12);
       --radius:24px;
     }
@@ -98,8 +103,6 @@
       color:var(--navy);
     }
 
-    /* CSS LOGO */
-
     .logo{
       width:46px;
       height:46px;
@@ -148,7 +151,7 @@
     .nav-links{
       display:flex;
       align-items:center;
-      gap:25px;
+      gap:23px;
       font-size:14px;
       font-weight:700;
     }
@@ -249,7 +252,7 @@
     .hero-text{
       color:var(--muted);
       font-size:18px;
-      max-width:670px;
+      max-width:690px;
       margin-bottom:29px;
     }
 
@@ -279,6 +282,7 @@
       align-items:center;
       justify-content:center;
       font-weight:900;
+      flex-shrink:0;
     }
 
     /* HERO CARD */
@@ -350,7 +354,7 @@
 
     .stat strong{
       display:block;
-      font-size:24px;
+      font-size:21px;
       color:var(--navy);
       line-height:1.1;
       margin-bottom:4px;
@@ -383,22 +387,7 @@
       font-weight:900;
     }
 
-    .progress{
-      height:7px;
-      border-radius:99px;
-      background:rgba(255,255,255,.15);
-      overflow:hidden;
-    }
-
-    .progress span{
-      display:block;
-      width:1%;
-      height:100%;
-      background:linear-gradient(90deg,var(--gold),var(--gold2));
-      border-radius:99px;
-    }
-
-    /* SOCIAL PROOF */
+    /* TRUST STRIP */
 
     .proof-strip{
       padding:18px 0;
@@ -411,7 +400,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:35px;
+      gap:30px;
       flex-wrap:wrap;
       color:var(--muted);
       font-size:13px;
@@ -435,7 +424,7 @@
     }
 
     .section-head{
-      max-width:720px;
+      max-width:760px;
       margin-bottom:40px;
     }
 
@@ -458,6 +447,221 @@
 
     .section-head p{
       color:var(--muted);
+    }
+
+    /* WHAT IS IBB */
+
+    .concept{
+      background:#fff;
+    }
+
+    .concept-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .concept-card{
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:29px;
+      background:#fff;
+    }
+
+    .concept-card.dark{
+      background:var(--navy);
+      color:#fff;
+      border-color:var(--navy);
+    }
+
+    .concept-card h3{
+      color:var(--navy);
+      font-size:23px;
+      margin-bottom:11px;
+    }
+
+    .concept-card.dark h3{
+      color:#fff;
+    }
+
+    .concept-card p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .concept-card.dark p{
+      color:#d0d5dd;
+    }
+
+    .concept-list{
+      list-style:none;
+      margin-top:19px;
+    }
+
+    .concept-list li{
+      padding:8px 0;
+      font-size:14px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .concept-card.dark .concept-list li{
+      border-color:rgba(255,255,255,.1);
+    }
+
+    .concept-list li:last-child{
+      border-bottom:0;
+    }
+
+    .check{
+      color:var(--green);
+      font-weight:950;
+      margin-right:8px;
+    }
+
+    .dark .check{
+      color:var(--gold2);
+    }
+
+    /* BUSINESS MODEL */
+
+    .model{
+      background:
+        radial-gradient(circle at 90% 10%,rgba(217,154,36,.08),transparent 28%),
+        var(--bg);
+    }
+
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:12px;
+      align-items:stretch;
+    }
+
+    .flow-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:22px 17px;
+      position:relative;
+    }
+
+    .flow-card:not(:last-child):after{
+      content:"→";
+      position:absolute;
+      right:-16px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--gold);
+      font-size:20px;
+      font-weight:950;
+      z-index:2;
+    }
+
+    .flow-number{
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      background:var(--navy);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      font-weight:900;
+      margin-bottom:14px;
+    }
+
+    .flow-card h3{
+      color:var(--navy);
+      font-size:16px;
+      margin-bottom:6px;
+    }
+
+    .flow-card p{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .model-note{
+      margin-top:24px;
+      padding:18px 20px;
+      background:var(--green-light);
+      border:1px solid #ccecdf;
+      border-radius:17px;
+      color:#155e4a;
+      font-size:13px;
+    }
+
+    /* TASKS */
+
+    .task-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .task-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:25px;
+      transition:.2s ease;
+    }
+
+    .task-card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow);
+    }
+
+    .task-icon{
+      width:47px;
+      height:47px;
+      border-radius:14px;
+      background:#f4f6f8;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:21px;
+      margin-bottom:17px;
+    }
+
+    .task-card h3{
+      color:var(--navy);
+      font-size:18px;
+      margin-bottom:7px;
+    }
+
+    .task-card p{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .task-example{
+      margin-top:24px;
+      padding:22px;
+      background:var(--navy);
+      color:#fff;
+      border-radius:21px;
+    }
+
+    .task-example small{
+      display:block;
+      color:var(--gold2);
+      font-weight:900;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      margin-bottom:9px;
+    }
+
+    .task-example strong{
+      display:block;
+      font-size:18px;
+      margin-bottom:8px;
+    }
+
+    .task-example p{
+      color:#d0d5dd;
+      font-size:13px;
     }
 
     /* VIDEO */
@@ -504,7 +708,7 @@
       font-size:14px;
     }
 
-    /* BENEFITS */
+    /* COMMUNITY */
 
     .cards{
       display:grid;
@@ -589,69 +793,46 @@
       font-size:13px;
     }
 
-    /* REVIEW / TESTIMONIAL */
+    /* TRUST / FEEDBACK */
 
-    .reviews{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-
-    .review{
+    .feedback-box{
       background:#fff;
       border:1px solid var(--border);
-      border-radius:22px;
-      padding:25px;
+      border-radius:25px;
+      padding:35px;
+      text-align:center;
+      max-width:850px;
+      margin:auto;
     }
 
-    .stars{
-      color:var(--gold);
-      letter-spacing:2px;
-      margin-bottom:13px;
-      font-size:15px;
-    }
-
-    .review p{
-      color:var(--text);
-      font-size:14px;
-      margin-bottom:18px;
-    }
-
-    .review-user{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    .avatar{
-      width:36px;
-      height:36px;
-      border-radius:50%;
-      background:var(--navy);
-      color:#fff;
+    .feedback-icon{
+      width:58px;
+      height:58px;
+      border-radius:18px;
+      background:var(--green-light);
+      color:var(--green);
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:12px;
-      font-weight:900;
+      margin:0 auto 17px;
+      font-size:25px;
     }
 
-    .review-user strong{
-      display:block;
-      font-size:13px;
+    .feedback-box h3{
       color:var(--navy);
+      font-size:23px;
+      margin-bottom:9px;
     }
 
-    .review-user span{
-      display:block;
-      font-size:11px;
+    .feedback-box p{
       color:var(--muted);
+      font-size:14px;
     }
 
-    .review-note{
-      margin-top:20px;
-      color:var(--muted);
+    .feedback-note{
+      margin-top:16px;
       font-size:11px;
+      color:var(--muted);
     }
 
     /* MEMBERSHIP */
@@ -683,6 +864,23 @@
       color:#d0d5dd;
       margin-bottom:25px;
       max-width:600px;
+    }
+
+    .membership-points{
+      list-style:none;
+      margin-bottom:25px;
+    }
+
+    .membership-points li{
+      padding:7px 0;
+      color:#e4e7ec;
+      font-size:14px;
+    }
+
+    .membership-points span{
+      color:var(--gold2);
+      font-weight:900;
+      margin-right:7px;
     }
 
     .price-card{
@@ -724,6 +922,20 @@
       color:var(--green);
       font-weight:900;
       margin-right:6px;
+    }
+
+    .fee-clarity{
+      margin:18px 0;
+      padding:14px;
+      border-radius:14px;
+      background:#f7f9fc;
+      border:1px solid var(--border);
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .fee-clarity strong{
+      color:var(--navy);
     }
 
     .disclaimer{
@@ -777,7 +989,7 @@
 
     .final-cta p{
       color:var(--muted);
-      max-width:650px;
+      max-width:680px;
       margin:0 auto 25px;
     }
 
@@ -822,7 +1034,39 @@
 
     /* MOBILE */
 
-    @media(max-width:850px){
+    @media(max-width:950px){
+
+      .nav-links{
+        gap:12px;
+      }
+
+      .hero-grid,
+      .membership-box{
+        grid-template-columns:1fr;
+      }
+
+      .flow{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .flow-card:not(:last-child):after{
+        display:none;
+      }
+
+      .task-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .cards{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .steps{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:700px){
 
       .nav-links{
         display:none;
@@ -832,18 +1076,10 @@
         padding:60px 0;
       }
 
-      .hero-grid,
-      .membership-box{
+      .concept-grid,
+      .task-grid,
+      .cards{
         grid-template-columns:1fr;
-      }
-
-      .cards,
-      .reviews{
-        grid-template-columns:1fr;
-      }
-
-      .steps{
-        grid-template-columns:1fr 1fr;
       }
 
       .section-head h2{
@@ -852,6 +1088,10 @@
 
       .membership h2{
         font-size:36px;
+      }
+
+      .flow{
+        grid-template-columns:1fr;
       }
     }
 
@@ -944,8 +1184,9 @@
 
   <!-- TOP BAR -->
   <div class="topbar">
-    <span>IBB</span> • Community First • People • Businesses • Opportunities
+    <span>IBB</span> • People • Businesses • Campaigns • Opportunities
   </div>
+
 
   <!-- NAV -->
   <nav>
@@ -964,8 +1205,9 @@
 
       <div class="nav-links">
         <a href="#community">Community</a>
+        <a href="#model">Business Model</a>
+        <a href="#tasks">Tasks</a>
         <a href="#how">How It Works</a>
-        <a href="#reviews">Reviews</a>
         <a href="#faq">FAQ</a>
 
         <a href="join.html" class="btn btn-primary">
@@ -986,18 +1228,20 @@
 
         <div class="eyebrow">
           <span class="live-dot"></span>
-          BUILDING INDIA'S COMMUNITY
+          BUILDING INDIA'S BUSINESS COMMUNITY
         </div>
 
         <h1>
           People first.<br>
-          <span class="highlight">Opportunities next.</span>
+          <span class="highlight">Business next.</span>
         </h1>
 
         <p class="hero-text">
-          Indian Business Bureau is building a community where
-          people, businesses and legitimate opportunities can
-          connect, collaborate and grow together.
+          Indian Business Bureau is a community where people,
+          businesses and legitimate opportunities can connect.
+          Businesses can bring requirements to IBB, and eligible
+          members may participate in available campaigns or tasks
+          according to their terms.
         </p>
 
         <div class="hero-actions">
@@ -1006,15 +1250,15 @@
             BECOME A MEMBER — ₹101
           </a>
 
-          <a href="#community" class="btn btn-outline">
-            Explore IBB
+          <a href="#model" class="btn btn-outline">
+            See How IBB Works
           </a>
 
         </div>
 
         <div class="trust-line">
           <div class="trust-check">✓</div>
-          Transparent membership • No guaranteed earnings
+          One-time membership • Transparent process • No guaranteed income
         </div>
 
       </div>
@@ -1030,13 +1274,14 @@
         </div>
 
         <h3>
-          One network.<br>
-          Many possibilities.
+          Businesses bring requirements.<br>
+          Members may complete tasks.
         </h3>
 
         <p class="hero-card-intro">
-          Join the early member network and stay connected with
-          upcoming community and business initiatives.
+          IBB is designed to connect business requirements with
+          eligible community members through structured campaigns
+          and clear task terms.
         </p>
 
         <div class="stats">
@@ -1047,18 +1292,18 @@
           </div>
 
           <div class="stat">
-            <strong>1</strong>
-            <span>Simple registration</span>
+            <strong>Tasks</strong>
+            <span>Campaign based</span>
           </div>
 
           <div class="stat">
-            <strong>People</strong>
-            <span>Community focused</span>
+            <strong>Review</strong>
+            <span>Work is checked</span>
           </div>
 
           <div class="stat">
-            <strong>IBB</strong>
-            <span>Growing network</span>
+            <strong>Payout</strong>
+            <span>As per task terms</span>
           </div>
 
         </div>
@@ -1066,16 +1311,13 @@
         <div class="target-box">
 
           <div class="target-row">
-            <span>Community goal</span>
+            <span>Long-term community goal</span>
             <span>50,000 members</span>
           </div>
 
-          <div class="progress">
-            <span></span>
-          </div>
-
           <div style="margin-top:9px;font-size:10px;color:#98a2b3;">
-            Progress will be updated from verified member data.
+            Member numbers will be displayed only from verified
+            registration data.
           </div>
 
         </div>
@@ -1094,7 +1336,7 @@
     <div class="container proof-inner">
 
       <div class="proof-item">
-        ✓ <b>Simple Registration</b>
+        ✓ <b>Clear Membership Fee</b>
       </div>
 
       <div class="proof-item">
@@ -1102,16 +1344,348 @@
       </div>
 
       <div class="proof-item">
-        ✓ <b>Clear Membership Terms</b>
+        ✓ <b>Campaign Based Work</b>
       </div>
 
       <div class="proof-item">
-        ✓ <b>Community Focused</b>
+        ✓ <b>No Guaranteed Earnings</b>
       </div>
 
     </div>
 
   </div>
+
+
+  <!-- WHAT IS IBB -->
+
+  <section class="concept">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="section-label">First Understand This</div>
+
+        <h2>
+          IBB actually karta kya hai?
+        </h2>
+
+        <p>
+          Simple language mein: IBB ka purpose people aur businesses
+          ko ek structured community ke through connect karna hai.
+          Business ki genuine requirement ko campaign/task format
+          mein organise kiya ja sakta hai.
+        </p>
+
+      </div>
+
+
+      <div class="concept-grid">
+
+        <div class="concept-card">
+
+          <h3>🏢 Businesses ke liye</h3>
+
+          <p>
+            Businesses apni genuine requirements ko IBB ke through
+            structured campaigns ke form mein introduce kar sakte hain.
+          </p>
+
+          <ul class="concept-list">
+
+            <li>
+              <span class="check">✓</span>
+              Lead generation requirements
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              Market research
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              Local business reach
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              Customer/business outreach
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              Content and data support
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="concept-card dark">
+
+          <h3>👥 Members ke liye</h3>
+
+          <p>
+            Eligible members available campaigns ko dekh sakte hain,
+            apni eligibility ke according task choose kar sakte hain
+            aur defined instructions ke according work submit kar sakte hain.
+          </p>
+
+          <ul class="concept-list">
+
+            <li>
+              <span class="check">✓</span>
+              Available task dekho
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              Eligibility aur terms samjho
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              Task complete karo
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              Required proof/work submit karo
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              Approval ke baad applicable reward/payout
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BUSINESS MODEL -->
+
+  <section class="model" id="model">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="section-label">The IBB Model</div>
+
+        <h2>
+          Business requirement se member task tak.
+        </h2>
+
+        <p>
+          IBB ka basic operating flow simple hai. Har campaign ke
+          apne requirements, eligibility rules, deadlines, proof
+          requirements aur reward terms ho sakte hain.
+        </p>
+
+      </div>
+
+
+      <div class="flow">
+
+        <div class="flow-card">
+
+          <div class="flow-number">1</div>
+
+          <h3>Business Need</h3>
+
+          <p>
+            Business apni genuine requirement ya campaign objective
+            define karta hai.
+          </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+          <div class="flow-number">2</div>
+
+          <h3>IBB Campaign</h3>
+
+          <p>
+            Requirement ko structured campaign/task format mein organise
+            kiya ja sakta hai.
+          </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+          <div class="flow-number">3</div>
+
+          <h3>Member Task</h3>
+
+          <p>
+            Eligible members available task ko choose karke instructions
+            follow karte hain.
+          </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+          <div class="flow-number">4</div>
+
+          <h3>Submit & Review</h3>
+
+          <p>
+            Member required work/proof submit karta hai aur IBB review
+            process ke through check karta hai.
+          </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+          <div class="flow-number">5</div>
+
+          <h3>Approved Payout</h3>
+
+          <p>
+            Approved work par campaign ke defined reward/payout terms
+            apply hote hain.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="model-note">
+        <strong>Important:</strong>
+        Task availability, eligibility, approval and payout campaign
+        ke specific terms par depend karte hain. Membership lene se
+        automatic task, employment ya income guarantee nahi hoti.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TASKS -->
+
+  <section id="tasks">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="section-label">Possible Campaign Types</div>
+
+        <h2>
+          Members kis type ke tasks dekh sakte hain?
+        </h2>
+
+        <p>
+          Campaign availability business requirements par depend karegi.
+          Ye examples possible categories ko explain karne ke liye hain,
+          guaranteed available jobs ki list nahi.
+        </p>
+
+      </div>
+
+
+      <div class="task-grid">
+
+        <div class="task-card">
+          <div class="task-icon">🎯</div>
+          <h3>Lead Generation</h3>
+          <p>
+            Defined criteria ke according genuine business/customer
+            leads collect karna.
+          </p>
+        </div>
+
+
+        <div class="task-card">
+          <div class="task-icon">📍</div>
+          <h3>Local Reach</h3>
+          <p>
+            Local market mein approved business campaigns ke liye
+            defined outreach activities.
+          </p>
+        </div>
+
+
+        <div class="task-card">
+          <div class="task-icon">📊</div>
+          <h3>Market Survey</h3>
+          <p>
+            Approved survey questions ke through market information
+            ya customer insights collect karna.
+          </p>
+        </div>
+
+
+        <div class="task-card">
+          <div class="task-icon">📱</div>
+          <h3>Social Media Support</h3>
+          <p>
+            Campaign terms ke according legitimate content or social
+            media support activities.
+          </p>
+        </div>
+
+
+        <div class="task-card">
+          <div class="task-icon">📝</div>
+          <h3>Content Tasks</h3>
+          <p>
+            Approved campaigns ke liye photos, videos, written content
+            ya other defined material provide karna.
+          </p>
+        </div>
+
+
+        <div class="task-card">
+          <div class="task-icon">🔎</div>
+          <h3>Data & Research</h3>
+          <p>
+            Data verification, market research ya information
+            collection based tasks.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="task-example">
+
+        <small>Example Campaign</small>
+
+        <strong>
+          Local Business Campaign — Ludhiana
+        </strong>
+
+        <p>
+          Goal: defined number of genuine leads collect karna.
+          Reward, eligibility, deadline aur proof requirements
+          campaign publish hone par clearly define kiye jayenge.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
   <!-- VIDEO -->
@@ -1125,12 +1699,13 @@
         <div class="section-label">Start Here</div>
 
         <h2>
-          Understand IBB before you join.
+          ₹101 pay karne se pehle IBB ko samjho.
         </h2>
 
         <p>
-          Watch the official introduction to understand what IBB is,
-          how membership works and what members can realistically expect.
+          Official introduction video mein IBB ka community model,
+          business campaigns, member tasks aur membership process
+          clearly explain kiya ja sakta hai.
         </p>
 
       </div>
@@ -1144,8 +1719,9 @@
           <h2>IBB Introduction</h2>
 
           <p>
-            Your official introduction video can be embedded here.
-            Replace this section with your YouTube/video link when ready.
+            Your official IBB introduction video can be embedded here.
+            Jab video ready ho, is section ko YouTube/video link se replace
+            kiya ja sakta hai.
           </p>
 
         </div>
@@ -1168,14 +1744,12 @@
         <div class="section-label">The Community</div>
 
         <h2>
-          Why build a community first?
+          People + Businesses + Opportunities.
         </h2>
 
         <p>
-          A strong network creates opportunities for meaningful
-          connections. IBB is designed around people first,
-          with legitimate business and community initiatives
-          introduced as the network develops.
+          IBB ka foundation ek connected community hai jahan people
+          aur businesses ek structured network mein interact kar sakte hain.
         </p>
 
       </div>
@@ -1190,9 +1764,9 @@
           <h3>People</h3>
 
           <p>
-            Connect with other members and become part of a
-            growing network of people with different skills,
-            interests and ambitions.
+            Members ek growing network ka part bante hain aur
+            available community initiatives aur eligible campaigns
+            ke baare mein information receive kar sakte hain.
           </p>
 
         </div>
@@ -1205,9 +1779,9 @@
           <h3>Businesses</h3>
 
           <p>
-            Create a network where businesses can eventually
-            introduce legitimate campaigns, services and
-            collaboration opportunities.
+            Businesses apni genuine requirements ko structured
+            campaigns ke form mein introduce kar sakte hain,
+            subject to applicable terms.
           </p>
 
         </div>
@@ -1220,9 +1794,9 @@
           <h3>Opportunities</h3>
 
           <p>
-            Discover opportunities as they become available.
-            Each opportunity can have its own eligibility,
-            terms and conditions.
+            Campaigns aur opportunities availability ke according
+            introduce ki ja sakti hain. Har opportunity ki apni
+            eligibility aur conditions ho sakti hain.
           </p>
 
         </div>
@@ -1242,14 +1816,15 @@
 
       <div class="section-head">
 
-        <div class="section-label">Simple Process</div>
+        <div class="section-label">Member Journey</div>
 
         <h2>
-          Joining takes only a few steps.
+          Member ka journey simple rakha gaya hai.
         </h2>
 
         <p>
-          We keep the member experience straightforward and transparent.
+          Registration ke baad membership verification hoti hai.
+          Available campaigns alag process ke through operate ho sakte hain.
         </p>
 
       </div>
@@ -1264,7 +1839,8 @@
           <h3>Register</h3>
 
           <p>
-            Enter your basic details through the membership form.
+            Apna basic information submit karke IBB membership
+            registration start karein.
           </p>
 
         </div>
@@ -1277,8 +1853,8 @@
           <h3>Pay ₹101</h3>
 
           <p>
-            Complete the one-time membership payment using the
-            available UPI payment option.
+            Current one-time membership fee ₹101 hai. Ye membership
+            fee hai, kisi particular task ka purchase ya job deposit nahi.
           </p>
 
         </div>
@@ -1288,11 +1864,11 @@
 
           <div class="number">3</div>
 
-          <h3>Submit UTR</h3>
+          <h3>Verify</h3>
 
           <p>
-            Submit your UTR/transaction ID so the payment can
-            be manually checked.
+            Payment ke baad UTR/transaction ID submit karein.
+            Payment manually verify kiya ja sakta hai.
           </p>
 
         </div>
@@ -1302,15 +1878,31 @@
 
           <div class="number">4</div>
 
-          <h3>Get Access</h3>
+          <h3>Participate</h3>
 
           <p>
-            Once your membership is verified, follow the
-            provided instructions for community access.
+            Verification ke baad applicable community access aur
+            available eligible campaigns ke instructions follow karein.
           </p>
 
         </div>
 
+      </div>
+
+
+      <div style="
+        margin-top:25px;
+        padding:19px;
+        background:#f7f9fc;
+        border:1px solid var(--border);
+        border-radius:18px;
+        color:var(--muted);
+        font-size:13px;
+      ">
+        <strong style="color:var(--navy);">
+          Campaign flow:
+        </strong>
+        Task → Complete → Submit Proof → Review → Approved → Applicable Payout
       </div>
 
     </div>
@@ -1318,7 +1910,7 @@
   </section>
 
 
-  <!-- REVIEWS -->
+  <!-- FEEDBACK -->
 
   <section id="reviews">
 
@@ -1329,101 +1921,36 @@
         <div class="section-label">Member Feedback</div>
 
         <h2>
-          Real experiences matter.
+          Trust real experiences se banta hai.
         </h2>
 
         <p>
-          Publish genuine feedback from verified members here.
-          Do not use fabricated reviews or earnings claims.
+          IBB par sirf genuine member experiences publish kiye jayenge.
+          Fake ratings, fabricated testimonials ya guaranteed earning
+          claims use nahi kiye jayenge.
         </p>
 
       </div>
 
 
-      <div class="reviews">
+      <div class="feedback-box">
 
-        <!-- Replace these with REAL member feedback -->
+        <div class="feedback-icon">✓</div>
 
-        <div class="review">
+        <h3>Verified member feedback will appear here.</h3>
 
-          <div class="stars">
-            ★★★★★
-          </div>
+        <p>
+          Jaise-jaise genuine members apna experience share karenge,
+          permission ke saath authentic feedback yahan publish kiya ja
+          sakta hai.
+        </p>
 
-          <p>
-            “Add a genuine member review here after receiving
-            permission from the member.”
-          </p>
-
-          <div class="review-user">
-
-            <div class="avatar">M</div>
-
-            <div>
-              <strong>Verified Member</strong>
-              <span>IBB Community</span>
-            </div>
-
-          </div>
-
+        <div class="feedback-note">
+          Feedback should represent the actual member experience.
+          Financial results, if mentioned, should never be presented
+          as guaranteed outcomes.
         </div>
 
-
-        <div class="review">
-
-          <div class="stars">
-            ★★★★★
-          </div>
-
-          <p>
-            “Use this space for authentic feedback about the
-            registration and community experience.”
-          </p>
-
-          <div class="review-user">
-
-            <div class="avatar">M</div>
-
-            <div>
-              <strong>Verified Member</strong>
-              <span>IBB Community</span>
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="review">
-
-          <div class="stars">
-            ★★★★★
-          </div>
-
-          <p>
-            “Only publish genuine feedback. Earnings should never
-            be presented as guaranteed.”
-          </p>
-
-          <div class="review-user">
-
-            <div class="avatar">M</div>
-
-            <div>
-              <strong>Verified Member</strong>
-              <span>IBB Community</span>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="review-note">
-        ★ Ratings and testimonials should represent genuine
-        member experiences only.
       </div>
 
     </div>
@@ -1444,14 +1971,40 @@
         </div>
 
         <h2>
-          Start with the community.
+          ₹101 se community join karo.
         </h2>
 
         <p class="membership-copy">
-          Join the early IBB member network for a one-time
-          membership fee of ₹101. Membership provides access
-          to the community according to the applicable terms.
+          ₹101 IBB ki current one-time membership/registration fee hai.
+          Membership ka purpose IBB community mein registration aur
+          applicable member access provide karna hai.
         </p>
+
+
+        <ul class="membership-points">
+
+          <li>
+            <span>✓</span>
+            ₹101 is a one-time membership fee
+          </li>
+
+          <li>
+            <span>✓</span>
+            It is not a job deposit
+          </li>
+
+          <li>
+            <span>✓</span>
+            It is not payment for a guaranteed task
+          </li>
+
+          <li>
+            <span>✓</span>
+            It does not guarantee income or profit
+          </li>
+
+        </ul>
+
 
         <a href="join.html" class="btn btn-gold">
           JOIN IBB — ₹101
@@ -1469,6 +2022,7 @@
         </small>
 
         <hr>
+
 
         <ul class="benefits">
 
@@ -1489,7 +2043,7 @@
 
           <li>
             <span>✓</span>
-            Future Community Updates
+            Community & Campaign Updates
           </li>
 
           <li>
@@ -1499,17 +2053,30 @@
 
         </ul>
 
+
+        <div class="fee-clarity">
+
+          <strong>Important:</strong><br>
+
+          ₹101 membership fee kisi specific task ko buy karne,
+          employment secure karne ya guaranteed earning receive
+          karne ki payment nahi hai.
+
+        </div>
+
+
         <a href="join.html"
            class="btn btn-gold"
            style="width:100%;">
           CONTINUE — ₹101
         </a>
 
+
         <div class="disclaimer">
-          Membership does not guarantee employment, income,
-          profit or any specific financial return.
-          Future opportunities may have separate eligibility
-          requirements and terms.
+          Membership does not guarantee employment, tasks,
+          income, profit or any specific financial return.
+          Campaign participation, eligibility and payouts are
+          subject to applicable campaign terms and verification.
         </div>
 
       </div>
@@ -1539,67 +2106,117 @@
       <div class="faq">
 
         <details>
-          <summary>What is Indian Business Bureau?</summary>
+          <summary>Indian Business Bureau kya hai?</summary>
 
           <p>
-            Indian Business Bureau is a community-focused
-            platform intended to connect people, businesses
-            and legitimate opportunities.
+            Indian Business Bureau (IBB) ek community-focused platform
+            hai jo people, businesses aur legitimate opportunities ko
+            connect karne ke liye designed hai. Businesses apni genuine
+            requirements ko campaigns/tasks ke form mein introduce kar
+            sakte hain.
           </p>
         </details>
 
 
         <details>
-          <summary>Why is the membership ₹101?</summary>
+          <summary>IBB business ke liye kya karta hai?</summary>
 
           <p>
-            ₹101 is the current one-time membership fee for
-            joining the IBB community.
+            Business ki requirement ko structured campaign format mein
+            organise kiya ja sakta hai. Campaign ke nature ke according
+            lead generation, research, outreach, promotion, content,
+            data support ya other legitimate tasks ho sakte hain.
           </p>
         </details>
 
 
         <details>
-          <summary>Does membership guarantee earnings?</summary>
+          <summary>Member ko kya karna hota hai?</summary>
 
           <p>
-            No. Membership does not guarantee earnings,
-            employment, profit or a specific financial return.
-            Any paid opportunity must be evaluated according
-            to its own eligibility and terms.
+            Eligible member available campaign ko review kar sakta hai,
+            eligibility aur instructions samajh sakta hai, task complete
+            karke required proof/work submit kar sakta hai. Approval ke
+            baad campaign ke defined payout terms apply hote hain.
           </p>
         </details>
 
 
         <details>
-          <summary>How is my payment verified?</summary>
+          <summary>Task complete karne par payment guaranteed hai?</summary>
 
           <p>
-            After making the UPI payment, members submit their
-            UTR/transaction ID. The submitted information can
-            then be checked before membership access is provided.
+            Kisi bhi task ka payout campaign ke specific terms,
+            eligibility, submission requirements aur approval par depend
+            karta hai. IBB membership ya participation ko guaranteed
+            income ke roop mein present nahi kiya jata.
           </p>
         </details>
 
 
         <details>
-          <summary>How do I get community access?</summary>
+          <summary>₹101 kisliye hai?</summary>
 
           <p>
-            After registration and successful payment verification,
-            eligible members receive the applicable community
-            access instructions.
+            ₹101 current one-time IBB membership/registration fee hai.
+            Ye kisi specific job, task, lead ya guaranteed earning ko
+            purchase karne ki payment nahi hai.
           </p>
         </details>
 
 
         <details>
-          <summary>Can I see actual member feedback?</summary>
+          <summary>Kya ₹101 dene ke baad earning start ho jayegi?</summary>
 
           <p>
-            Yes. Genuine member feedback can be published on this
-            page as the community grows. Testimonials should always
-            represent real experiences.
+            Nahi. Membership se automatic earning guarantee nahi hoti.
+            Future campaigns ki availability, eligibility aur payout
+            terms alag ho sakti hain.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>Payment kaise verify hota hai?</summary>
+
+          <p>
+            UPI payment complete karne ke baad member UTR/transaction ID
+            submit karta hai. Payment information ko manual verification
+            process ke through check kiya ja sakta hai.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>Community access kab milega?</summary>
+
+          <p>
+            Registration aur payment verification ke baad applicable
+            community access instructions eligible members ko provide
+            kiye ja sakte hain.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>Kya IBB guaranteed jobs provide karta hai?</summary>
+
+          <p>
+            Nahi. IBB membership ko guaranteed employment, job,
+            income ya profit ke promise ke roop mein nahi lena chahiye.
+            Opportunities campaign-specific aur availability-based ho sakti hain.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>Kya IBB par fake reviews ya fake earning claims hain?</summary>
+
+          <p>
+            IBB ko genuine member feedback aur transparent information
+            ke around build kiya jana chahiye. Fake ratings, fabricated
+            testimonials aur guaranteed earning claims publish nahi
+            kiye jane chahiye.
           </p>
         </details>
 
@@ -1617,12 +2234,13 @@
     <div class="container">
 
       <h2>
-        Ready to become an early member?
+        Community se shuruaat karo.
       </h2>
 
       <p>
-        Join the IBB community and be part of the network from
-        the beginning.
+        IBB ke early member network ka part baniye. ₹101 current
+        one-time membership fee hai. Join karne se pehle membership
+        terms aur opportunity conditions ko samajhna important hai.
       </p>
 
       <a href="join.html" class="btn btn-gold">
@@ -1647,7 +2265,7 @@
           <strong>Indian Business Bureau</strong>
 
           <p>
-            Community first. Opportunities next.
+            Community first. Business opportunities next.
           </p>
 
         </div>
@@ -1661,13 +2279,16 @@
 
       <div class="footer-disclaimer">
 
-        IBB membership does not constitute a guarantee of
-        employment, earnings, profits or financial returns.
-        Any opportunity, campaign or commercial activity made
-        available to members may be subject to separate terms,
-        eligibility requirements and applicable laws.
-        Members should review all relevant information before
-        making any payment or participating in an opportunity.
+        Indian Business Bureau membership does not constitute a guarantee
+        of employment, tasks, earnings, profits or financial returns.
+        The ₹101 membership/registration fee is not a payment for a
+        guaranteed job, task or income. Any campaign, opportunity,
+        reward or payout made available to members may be subject to
+        separate eligibility requirements, campaign terms, verification
+        procedures and applicable laws.
+
+        Members should review all relevant information before making
+        any payment or participating in any campaign or opportunity.
 
       </div>
 
@@ -1689,3 +2310,4 @@
 
 </body>
 </html>
+```
