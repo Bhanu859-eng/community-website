@@ -1,354 +1,486 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Payment ₹101 — Indian Business Bureau</title>
+  <title>Pay ₹101 — Indian Business Bureau</title>
 
   <style>
+    :root {
+      --navy: #0b1220;
+      --navy-soft: #172033;
+      --gold: #c89b3c;
+      --gold-soft: #fff7e6;
+      --green: #15803d;
+      --green-soft: #ecfdf3;
+      --text: #111827;
+      --muted: #667085;
+      --border: #e5e7eb;
+      --surface: #ffffff;
+      --soft: #f8fafc;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: "Avenir Next", Inter, "Segoe UI", Arial, sans-serif;
     }
 
     body {
       min-height: 100vh;
+      font-family:
+        "Inter",
+        "Avenir Next",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
       background:
-        radial-gradient(circle at top left, #dbeafe, transparent 35%),
-        radial-gradient(circle at bottom right, #e0e7ff, transparent 35%),
-        linear-gradient(135deg, #f8fafc, #eef2ff);
+        radial-gradient(
+          circle at top left,
+          rgba(200, 155, 60, .12),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at bottom right,
+          rgba(21, 128, 61, .08),
+          transparent 35%
+        ),
+        linear-gradient(135deg, #f8fafc, #eef2f7);
+
+      color: var(--text);
+
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 20px 15px;
-      color: #111827;
+      justify-content: center;
+
+      padding: 22px;
     }
 
     .page {
       width: 100%;
-      max-width: 560px;
+      max-width: 590px;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: 28px;
+      padding: 38px 30px;
+
+      border: 1px solid rgba(15, 23, 42, .06);
+
+      box-shadow:
+        0 25px 70px rgba(15, 23, 42, .12);
     }
 
     .brand {
       text-align: center;
-      margin-bottom: 18px;
-    }
 
-    .brand-icon {
-      width: 62px;
-      height: 62px;
-      margin: 0 auto 11px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 19px;
-      background: linear-gradient(135deg, #111827, #374151);
-      color: #fff;
-      font-size: 20px;
+      font-size: 12px;
       font-weight: 900;
-      box-shadow: 0 12px 30px rgba(17,24,39,.20);
-    }
+      letter-spacing: 1.4px;
 
-    .brand h1 {
-      font-size: 23px;
-      letter-spacing: .8px;
-      font-weight: 900;
-    }
-
-    .brand p {
-      margin-top: 6px;
       color: #6b7280;
-      font-size: 14px;
-    }
 
-    .card {
-      background: rgba(255,255,255,.97);
-      border-radius: 26px;
-      padding: 30px;
-      box-shadow:
-        0 25px 60px rgba(15,23,42,.12),
-        0 5px 20px rgba(15,23,42,.05);
-    }
-
-    .header {
-      margin-bottom: 22px;
-    }
-
-    .header h2 {
-      font-size: 25px;
-      margin-bottom: 7px;
-    }
-
-    .header p {
-      color: #6b7280;
-      font-size: 14px;
-      line-height: 1.55;
-    }
-
-    .amount-card {
-      background: linear-gradient(135deg, #111827, #374151);
-      color: white;
-      border-radius: 18px;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       margin-bottom: 24px;
     }
 
-    .amount-card small {
-      display: block;
-      color: #cbd5e1;
+    h1 {
+      text-align: center;
+
+      color: var(--navy);
+
+      font-size: 29px;
+      line-height: 1.2;
+
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+
+      color: var(--muted);
+
+      font-size: 14px;
+      line-height: 1.6;
+
+      margin-bottom: 27px;
+    }
+
+    /* AMOUNT */
+
+    .amount-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background: var(--soft);
+      border: 1px solid var(--border);
+
+      border-radius: 16px;
+
+      padding: 17px 18px;
+
+      margin-bottom: 20px;
+    }
+
+    .amount-label {
+      color: var(--muted);
+
       font-size: 12px;
-      margin-bottom: 5px;
+      font-weight: 700;
     }
 
     .amount {
-      font-size: 38px;
+      color: var(--navy);
+
+      font-size: 27px;
       font-weight: 900;
     }
 
-    .one-time {
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.16);
-      padding: 8px 11px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    .section-title {
-      font-size: 15px;
-      font-weight: 800;
-      color: #374151;
-      margin-bottom: 12px;
-    }
-
-    .pay-button {
-      width: 100%;
-      min-height: 58px;
-      border: none;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #13795b, #0f9f72);
-      color: white;
-      font-size: 17px;
-      font-weight: 900;
-      cursor: pointer;
-      box-shadow: 0 12px 25px rgba(19,121,91,.20);
-      transition: .2s;
-    }
-
-    .pay-button:hover {
-      transform: translateY(-1px);
-      opacity: .95;
-    }
-
-    .pay-button:active {
-      transform: scale(.99);
-    }
-
-    .upi-apps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 9px;
-      margin-top: 12px;
-    }
-
-    .app {
-      padding: 12px 6px;
-      border: 1px solid #e5e7eb;
-      background: #fff;
-      border-radius: 11px;
-      text-align: center;
-      font-size: 12px;
-      font-weight: 800;
-      color: #374151;
-    }
-
-    .app-icon {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
+    /* UPI BOX */
 
     .upi-box {
-      margin-top: 20px;
-      padding: 16px;
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
+      border: 1px solid #ead8a8;
+      background: #fffdf7;
+
+      border-radius: 18px;
+
+      padding: 20px;
+
+      margin-bottom: 22px;
     }
 
-    .upi-label {
-      font-size: 12px;
-      color: #6b7280;
-      margin-bottom: 7px;
+    .upi-title {
+      font-size: 13px;
+      font-weight: 900;
+
+      color: var(--navy);
+
+      margin-bottom: 10px;
     }
 
     .upi-row {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
     }
 
     .upi-id {
       flex: 1;
+
       min-width: 0;
-      font-weight: 900;
-      color: #111827;
-      word-break: break-all;
+
+      padding: 13px;
+
+      background: white;
+      border: 1px solid var(--border);
+
+      border-radius: 11px;
+
+      color: var(--text);
+
       font-size: 14px;
+      font-weight: 900;
+
+      word-break: break-all;
     }
 
     .copy-btn {
-      border: 1px solid #d1d5db;
-      background: white;
-      color: #111827;
-      padding: 9px 12px;
-      border-radius: 8px;
-      cursor: pointer;
+      border: none;
+
+      background: var(--navy);
+      color: white;
+
+      padding: 13px 15px;
+
+      border-radius: 11px;
+
       font-size: 12px;
       font-weight: 800;
+
+      cursor: pointer;
     }
 
-    .instructions {
-      margin-top: 18px;
-      padding: 15px;
-      border-radius: 12px;
-      background: #f9fafb;
-      color: #4b5563;
-      font-size: 13px;
-      line-height: 1.65;
+    .copy-btn:active {
+      transform: scale(.98);
     }
 
-    .instructions strong {
-      color: #111827;
+    /* PAY BUTTON */
+
+    .pay-btn {
+      display: block;
+
+      width: 100%;
+
+      border: none;
+
+      padding: 16px;
+
+      border-radius: 13px;
+
+      background: var(--green);
+      color: white;
+
+      font-size: 14px;
+      font-weight: 900;
+
+      cursor: pointer;
+
+      margin-top: 13px;
     }
 
-    .status {
-      display: none;
-      margin-top: 15px;
-      padding: 14px;
-      border-radius: 12px;
-      background: #eef2ff;
-      color: #3730a3;
-      font-size: 13px;
-      line-height: 1.5;
+    .pay-btn:hover {
+      background: #166534;
+    }
+
+    .upi-help {
       text-align: center;
+
+      color: #8a651d;
+
+      font-size: 11px;
+
+      margin-top: 10px;
+      line-height: 1.5;
     }
 
-    .verification-box {
-      margin-top: 22px;
-      padding: 20px;
-      border-radius: 16px;
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
+    /* STEPS */
+
+    .steps {
+      background: var(--soft);
+
+      border: 1px solid var(--border);
+
+      border-radius: 17px;
+
+      padding: 18px;
+
+      margin-bottom: 22px;
     }
 
-    .verification-box h3 {
-      font-size: 17px;
-      margin-bottom: 7px;
-    }
+    .steps-title {
+      color: var(--navy);
 
-    .verification-box p {
-      color: #6b7280;
-      font-size: 12px;
-      line-height: 1.55;
+      font-size: 13px;
+      font-weight: 900;
+
       margin-bottom: 15px;
     }
 
-    .utr-label {
-      display: block;
-      font-size: 13px;
-      font-weight: 800;
-      color: #374151;
-      margin-bottom: 8px;
+    .step {
+      display: flex;
+
+      gap: 12px;
+
+      margin-bottom: 15px;
     }
 
-    .utr-input {
-      width: 100%;
-      height: 52px;
-      border: 1px solid #d1d5db;
-      border-radius: 12px;
-      background: white;
-      padding: 0 14px;
-      font-size: 14px;
-      color: #111827;
-      outline: none;
-      text-transform: uppercase;
+    .step:last-child {
+      margin-bottom: 0;
     }
 
-    .utr-input:focus {
-      border-color: #6366f1;
-      box-shadow: 0 0 0 4px rgba(99,102,241,.10);
-    }
+    .number {
+      width: 27px;
+      height: 27px;
 
-    .verify-button {
-      width: 100%;
-      min-height: 52px;
-      margin-top: 12px;
-      border: none;
-      border-radius: 12px;
-      background: #111827;
+      min-width: 27px;
+
+      border-radius: 50%;
+
+      background: var(--navy);
       color: white;
-      font-size: 14px;
-      font-weight: 900;
-      cursor: pointer;
-    }
 
-    .verify-button:hover {
-      opacity: .93;
-    }
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    .verify-note {
-      margin-top: 10px;
-      color: #9ca3af;
       font-size: 11px;
-      line-height: 1.5;
-      text-align: center;
+      font-weight: 900;
     }
 
-    .back {
+    .step strong {
       display: block;
-      text-align: center;
-      margin-top: 20px;
-      color: #6b7280;
-      text-decoration: none;
+
+      color: var(--text);
+
       font-size: 13px;
-      font-weight: 700;
+
+      margin-bottom: 3px;
     }
+
+    .step span {
+      display: block;
+
+      color: var(--muted);
+
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* UTR */
+
+    .utr-section {
+      border-top: 1px solid var(--border);
+
+      padding-top: 24px;
+
+      margin-top: 4px;
+    }
+
+    .utr-title {
+      color: var(--navy);
+
+      font-size: 17px;
+      font-weight: 900;
+
+      margin-bottom: 7px;
+    }
+
+    .utr-description {
+      color: var(--muted);
+
+      font-size: 12px;
+      line-height: 1.6;
+
+      margin-bottom: 13px;
+    }
+
+    label {
+      display: block;
+
+      color: var(--text);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      margin-bottom: 7px;
+    }
+
+    input {
+      width: 100%;
+
+      padding: 14px;
+
+      border: 1px solid #d9dee7;
+
+      border-radius: 12px;
+
+      outline: none;
+
+      font-size: 14px;
+
+      color: var(--text);
+
+      background: white;
+    }
+
+    input:focus {
+      border-color: var(--navy);
+
+      box-shadow:
+        0 0 0 3px rgba(11, 18, 32, .07);
+    }
+
+    .submit-btn {
+      width: 100%;
+
+      border: none;
+
+      padding: 15px;
+
+      border-radius: 13px;
+
+      background: var(--navy);
+      color: white;
+
+      font-size: 13px;
+      font-weight: 900;
+
+      cursor: pointer;
+
+      margin-top: 12px;
+    }
+
+    .submit-btn:hover {
+      background: var(--navy-soft);
+    }
+
+    .submit-btn:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+    }
+
+    /* SECURITY */
+
+    .security {
+      display: flex;
+      gap: 9px;
+
+      background: var(--green-soft);
+
+      border: 1px solid #ccebd7;
+
+      border-radius: 13px;
+
+      padding: 13px;
+
+      margin-top: 18px;
+    }
+
+    .security-icon {
+      font-size: 16px;
+    }
+
+    .security p {
+      color: #3f6b4d;
+
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .security strong {
+      color: #166534;
+    }
+
+    /* FOOTER */
 
     .footer {
       text-align: center;
-      margin-top: 16px;
-      color: #9ca3af;
-      font-size: 11px;
+
+      color: #98a2b3;
+
+      font-size: 10px;
       line-height: 1.5;
+
+      margin-top: 19px;
     }
 
-    @media (max-width: 480px) {
+    /* MOBILE */
+
+    @media (max-width: 520px) {
       body {
-        padding: 15px 12px;
+        padding: 13px;
       }
 
       .card {
-        padding: 24px 18px;
-        border-radius: 22px;
+        padding: 30px 19px;
+        border-radius: 23px;
       }
 
-      .brand h1 {
-        font-size: 20px;
+      h1 {
+        font-size: 26px;
       }
 
-      .header h2 {
-        font-size: 22px;
+      .upi-row {
+        align-items: stretch;
       }
 
-      .amount {
-        font-size: 34px;
+      .copy-btn {
+        padding-left: 12px;
+        padding-right: 12px;
       }
     }
   </style>
@@ -356,288 +488,305 @@
 
 <body>
 
-<div class="page">
+  <main class="page">
 
-  <div class="brand">
-    <div class="brand-icon">IBB</div>
-    <h1>INDIAN BUSINESS BUREAU</h1>
-    <p>Professional Membership Registration</p>
-  </div>
+    <section class="card">
 
-  <div class="card">
+      <div class="brand">
+        INDIAN BUSINESS BUREAU
+      </div>
 
-    <div class="header">
-      <h2>Complete Your Membership</h2>
-      <p>
-        Complete the one-time ₹101 registration payment
-        using UPI, then submit your UTR for verification.
+      <h1>
+        Complete Your Registration
+      </h1>
+
+      <p class="subtitle">
+        Pay the one-time ₹101 registration fee and submit
+        your transaction reference for verification.
       </p>
-    </div>
 
-    <div class="amount-card">
-      <div>
-        <small>Membership Registration Fee</small>
-        <div class="amount">₹101</div>
+
+      <!-- AMOUNT -->
+
+      <div class="amount-box">
+
+        <div class="amount-label">
+          One-time Registration Fee
+        </div>
+
+        <div class="amount">
+          ₹101
+        </div>
+
       </div>
 
-      <div class="one-time">ONE TIME</div>
-    </div>
 
-    <div class="section-title">
-      Step 1 — Pay ₹101 using UPI
-    </div>
+      <!-- UPI -->
 
-    <button
-      type="button"
-      class="pay-button"
-      onclick="payUPI()"
-    >
-      PAY ₹101 WITH UPI →
-    </button>
+      <div class="upi-box">
 
-    <div class="upi-apps">
-      <div class="app">
-        <span class="app-icon">G</span>
-        Google Pay
-      </div>
+        <div class="upi-title">
+          Pay using UPI
+        </div>
 
-      <div class="app">
-        <span class="app-icon">P</span>
-        PhonePe
-      </div>
+        <div class="upi-row">
 
-      <div class="app">
-        <span class="app-icon">₹</span>
-        Other UPI
-      </div>
-    </div>
+          <div
+            class="upi-id"
+            id="upiId"
+          >
+            7528826377@slc
+          </div>
 
-    <div class="upi-box">
+          <button
+            type="button"
+            class="copy-btn"
+            onclick="copyUPI()"
+          >
+            Copy
+          </button>
 
-      <div class="upi-label">
-        Or pay directly to this UPI ID
-      </div>
-
-      <div class="upi-row">
-        <div class="upi-id" id="upiId">
-          7528826377@slc
         </div>
 
         <button
           type="button"
-          class="copy-btn"
-          onclick="copyUPI()"
+          class="pay-btn"
+          onclick="payWithUPI()"
         >
-          COPY
+          PAY ₹101 WITH UPI
         </button>
+
+        <div class="upi-help">
+          Google Pay · PhonePe · Other UPI Apps
+        </div>
+
       </div>
 
-    </div>
 
-    <div class="instructions">
-      <strong>Payment steps</strong><br><br>
+      <!-- STEPS -->
 
-      1. Tap <strong>PAY ₹101 WITH UPI</strong>.<br>
-      2. Select/confirm your UPI app.<br>
-      3. Make sure the amount is exactly <strong>₹101</strong>.<br>
-      4. Complete the payment in your UPI app.<br>
-      5. Return to this page.<br>
-      6. Enter the UTR / Transaction ID below.<br>
-      7. Submit your payment details for verification.
-    </div>
+      <div class="steps">
 
-    <div class="status" id="status">
-      UPI payment screen opened. Complete the payment and
-      return to this page.
-    </div>
+        <div class="steps-title">
+          How to complete payment
+        </div>
 
-    <div class="verification-box">
+        <div class="step">
 
-      <h3>Step 2 — Payment Verification</h3>
+          <div class="number">
+            1
+          </div>
 
-      <p>
-        After completing the payment, enter the UTR /
-        Transaction ID shown in your UPI app.
-        Your membership remains pending until the payment
-        is manually verified.
-      </p>
+          <div>
+            <strong>
+              Pay ₹101
+            </strong>
 
-      <form id="verificationForm">
+            <span>
+              Use the UPI ID above or tap the payment button
+              to open your UPI app.
+            </span>
+          </div>
 
-        <label class="utr-label" for="utr">
-          UTR / Transaction ID *
+        </div>
+
+
+        <div class="step">
+
+          <div class="number">
+            2
+          </div>
+
+          <div>
+            <strong>
+              Complete the payment
+            </strong>
+
+            <span>
+              After completing payment, keep your UTR /
+              transaction reference available.
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="number">
+            3
+          </div>
+
+          <div>
+            <strong>
+              Submit your UTR
+            </strong>
+
+            <span>
+              Enter the transaction reference below and
+              submit it for verification.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- UTR -->
+
+      <div class="utr-section">
+
+        <div class="utr-title">
+          Payment Verification
+        </div>
+
+        <p class="utr-description">
+          Enter the UTR / Transaction ID shown in your
+          UPI payment details.
+        </p>
+
+        <label for="utr">
+          UTR / Transaction ID
         </label>
 
         <input
           type="text"
           id="utr"
-          class="utr-input"
-          placeholder="Enter UTR / Transaction ID"
-          maxlength="50"
+          placeholder="Enter your UTR / Transaction ID"
           autocomplete="off"
-          required
+          maxlength="100"
         >
 
         <button
-          type="submit"
-          class="verify-button"
+          type="button"
+          class="submit-btn"
+          id="submitBtn"
+          onclick="submitPaymentVerification()"
         >
-          CONTINUE TO VERIFICATION FORM →
+          SUBMIT FOR VERIFICATION
         </button>
 
-      </form>
-
-      <div class="verify-note">
-        Never enter your UPI PIN, OTP, password or banking password.
       </div>
 
-    </div>
 
-    <a href="join.html" class="back">
-      ← Back to Registration
-    </a>
+      <!-- SECURITY -->
 
-  </div>
+      <div class="security">
 
-  <div class="footer">
-    Indian Business Bureau • Membership Registration<br>
-    Please verify the recipient and amount before confirming payment.
-  </div>
+        <div class="security-icon">
+          🔒
+        </div>
 
-</div>
+        <p>
+          <strong>Security:</strong>
+          Never enter or share your UPI PIN, OTP, password
+          or banking credentials on this page.
+        </p>
 
-<script>
-
-  /* ==============================
-     IBB PAYMENT CONFIG
-  ============================== */
-
-  const UPI_ID = "7528826377@slc";
-  const BUSINESS_NAME = "Indian Business Bureau";
-  const AMOUNT = "101.00";
-
-  /*
-     Google Form
-  */
-
-  const GOOGLE_FORM_URL =
-    "https://docs.google.com/forms/d/e/1FAIpQLSfkKFDLcQU34fKuIPWV042OPGfOgBqvyFhB_TLW1LSWB9ISPQ/viewform";
+      </div>
 
 
-  /*
-     Exact Google Form entry IDs
-  */
+      <div class="footer">
+        Membership activation is subject to successful
+        payment verification.
+      </div>
 
-  const NAME_ENTRY = "entry.1710482705";
-  const MOBILE_ENTRY = "entry.1711873210";
-  const UTR_ENTRY = "entry.2000855266";
+    </section>
 
-
-  /* ==============================
-     OPEN UPI
-  ============================== */
-
-  function payUPI() {
-
-    const upiLink =
-      "upi://pay" +
-      "?pa=" + encodeURIComponent(UPI_ID) +
-      "&pn=" + encodeURIComponent(BUSINESS_NAME) +
-      "&am=" + encodeURIComponent(AMOUNT) +
-      "&cu=INR";
-
-    document.getElementById("status").style.display = "block";
-
-    window.location.href = upiLink;
-  }
+  </main>
 
 
-  /* ==============================
-     COPY UPI ID
-  ============================== */
+  <!--
+    Hidden iframe.
 
-  function copyUPI() {
+    Google Form response is submitted here so the user
+    does NOT see Google's "Your response has been recorded"
+    page.
+  -->
 
-    const button =
-      document.querySelector(".copy-btn");
+  <iframe
+    name="googleFormFrame"
+    id="googleFormFrame"
+    style="display:none;"
+  ></iframe>
 
-    if (
-      navigator.clipboard &&
-      window.isSecureContext
-    ) {
 
-      navigator.clipboard
-        .writeText(UPI_ID)
+  <script>
+
+    /* =========================================
+       CONFIGURATION
+    ========================================= */
+
+    const UPI_ID = "7528826377@slc";
+
+    const GOOGLE_FORM_URL =
+      "https://docs.google.com/forms/d/e/1FAIpQLSfkKFDLcQU34fKuIPWV042OPGfOgBqvyFhB_TLW1LSWB9ISPQ/formResponse";
+
+    const NAME_ENTRY =
+      "entry.1710482705";
+
+    const MOBILE_ENTRY =
+      "entry.1711873210";
+
+    const UTR_ENTRY =
+      "entry.2000855266";
+
+
+    /* =========================================
+       UPI PAYMENT
+    ========================================= */
+
+    function payWithUPI() {
+
+      const upiUrl =
+        "upi://pay" +
+        "?pa=" + encodeURIComponent(UPI_ID) +
+        "&pn=" + encodeURIComponent("Indian Business Bureau") +
+        "&am=101.00" +
+        "&cu=INR";
+
+      window.location.href = upiUrl;
+    }
+
+
+    /* =========================================
+       COPY UPI ID
+    ========================================= */
+
+    function copyUPI() {
+
+      navigator.clipboard.writeText(UPI_ID)
         .then(function () {
 
-          button.innerText = "COPIED!";
+          const button =
+            document.querySelector(".copy-btn");
+
+          const oldText =
+            button.textContent;
+
+          button.textContent = "Copied!";
 
           setTimeout(function () {
-            button.innerText = "COPY";
-          }, 2000);
+            button.textContent = oldText;
+          }, 1500);
 
         })
         .catch(function () {
 
-          fallbackCopy();
+          alert(
+            "UPI ID: " + UPI_ID
+          );
+
         });
-
-    } else {
-
-      fallbackCopy();
     }
-  }
 
 
-  function fallbackCopy() {
+    /* =========================================
+       SUBMIT PAYMENT VERIFICATION
+    ========================================= */
 
-    alert(
-      "UPI ID: " + UPI_ID
-    );
-  }
-
-
-  /* ==============================
-     SUBMIT UTR
-  ============================== */
-
-  document
-    .getElementById("verificationForm")
-    .addEventListener("submit", function(event) {
-
-      event.preventDefault();
-
-      const utr =
-        document
-          .getElementById("utr")
-          .value
-          .trim()
-          .toUpperCase();
-
-      if (!utr) {
-
-        alert(
-          "Please enter your UTR / Transaction ID."
-        );
-
-        return;
-      }
-
-
-      if (utr.length < 6) {
-
-        alert(
-          "Please enter a valid UTR / Transaction ID."
-        );
-
-        return;
-      }
-
-
-      /*
-         Get registration data
-         from join.html
-      */
+    function submitPaymentVerification() {
 
       const name =
         sessionStorage.getItem("ibb_name") || "";
@@ -645,23 +794,54 @@
       const mobile =
         sessionStorage.getItem("ibb_mobile") || "";
 
+      const utrInput =
+        document.getElementById("utr");
 
-      if (!name || !mobile) {
+      const utr =
+        utrInput
+          ? utrInput.value.trim()
+          : "";
+
+
+      /* -----------------------------------------
+         VALIDATION
+      ----------------------------------------- */
+
+      if (!name) {
 
         alert(
-          "Your registration details could not be found. " +
-          "Please go back and complete registration again."
+          "Registration details are missing. Please go back and register again."
         );
-
-        window.location.href = "join.html";
 
         return;
       }
 
 
-      /*
-         Save locally for pending.html
-      */
+      if (!mobile) {
+
+        alert(
+          "Mobile number is missing. Please go back and register again."
+        );
+
+        return;
+      }
+
+
+      if (!utr) {
+
+        alert(
+          "Please enter your UTR / Transaction ID."
+        );
+
+        utrInput.focus();
+
+        return;
+      }
+
+
+      /* -----------------------------------------
+         SAVE UTR LOCALLY
+      ----------------------------------------- */
 
       sessionStorage.setItem(
         "ibb_utr",
@@ -673,39 +853,133 @@
         "pending"
       );
 
-      sessionStorage.setItem(
-        "ibb_payment_submitted_at",
-        new Date().toISOString()
+
+      /* -----------------------------------------
+         DISABLE BUTTON
+      ----------------------------------------- */
+
+      const submitBtn =
+        document.getElementById("submitBtn");
+
+      submitBtn.disabled = true;
+
+      submitBtn.textContent =
+        "SUBMITTING...";
+
+
+      /* -----------------------------------------
+         CREATE HIDDEN GOOGLE FORM
+      ----------------------------------------- */
+
+      const form =
+        document.createElement("form");
+
+      form.method = "POST";
+
+      form.action =
+        GOOGLE_FORM_URL;
+
+      form.target =
+        "googleFormFrame";
+
+      form.style.display =
+        "none";
+
+
+      /* -----------------------------------------
+         NAME
+      ----------------------------------------- */
+
+      const nameField =
+        document.createElement("input");
+
+      nameField.type =
+        "hidden";
+
+      nameField.name =
+        NAME_ENTRY;
+
+      nameField.value =
+        name;
+
+      form.appendChild(
+        nameField
       );
 
 
-      /*
-         Build Google Form pre-filled URL
-      */
+      /* -----------------------------------------
+         MOBILE
+      ----------------------------------------- */
 
-      const formURL =
-        GOOGLE_FORM_URL +
-        "?usp=pp_url" +
-        "&" + NAME_ENTRY +
-        "=" + encodeURIComponent(name) +
-        "&" + MOBILE_ENTRY +
-        "=" + encodeURIComponent(mobile) +
-        "&" + UTR_ENTRY +
-        "=" + encodeURIComponent(utr);
+      const mobileField =
+        document.createElement("input");
+
+      mobileField.type =
+        "hidden";
+
+      mobileField.name =
+        MOBILE_ENTRY;
+
+      mobileField.value =
+        mobile;
+
+      form.appendChild(
+        mobileField
+      );
 
 
-      /*
-         Open Google Form.
+      /* -----------------------------------------
+         UTR
+      ----------------------------------------- */
 
-         User must press SUBMIT
-         inside Google Form.
-      */
+      const utrField =
+        document.createElement("input");
 
-      window.location.href = formURL;
+      utrField.type =
+        "hidden";
 
-    });
+      utrField.name =
+        UTR_ENTRY;
 
-</script>
+      utrField.value =
+        utr;
+
+      form.appendChild(
+        utrField
+      );
+
+
+      /* -----------------------------------------
+         ADD FORM TO PAGE
+      ----------------------------------------- */
+
+      document.body.appendChild(
+        form
+      );
+
+
+      /* -----------------------------------------
+         SUBMIT TO GOOGLE FORM
+      ----------------------------------------- */
+
+      form.submit();
+
+
+      /* -----------------------------------------
+         GO TO OUR OWN PENDING PAGE
+      ----------------------------------------- */
+
+      setTimeout(function () {
+
+        window.location.href =
+          "pending.html";
+
+      }, 1500);
+
+    }
+
+  </script>
 
 </body>
 </html>
+```
